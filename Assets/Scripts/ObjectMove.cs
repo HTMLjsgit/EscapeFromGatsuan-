@@ -11,6 +11,7 @@ public class ObjectMove : MonoBehaviour
     private GameObject Player;
     private float PositionArrivalWaitTimeNow = 0;
     public float PositionArrivalWaitTime = 3;
+    private bool Collidered; 
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +22,12 @@ public class ObjectMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(this.transform.position, TargetPositions[NowPosition].transform.position) <= 3)
+        if(Collidered)
         {
+            Debug.Log("Collidered---------------!!!erew");
             PositionArrivalWaitTimeNow += Time.deltaTime;
-            Debug.Log("--------------------------------------!!!!");
-            if(PositionArrivalWaitTimeNow > PositionArrivalWaitTime)
+            rigid.velocity = Vector3.zero;
+            if (PositionArrivalWaitTimeNow > PositionArrivalWaitTime)
             {
                 if (NowPosition < TargetPositions.Count - 1)
                 {
@@ -36,6 +38,7 @@ public class ObjectMove : MonoBehaviour
 
                     NowPosition = 0;
                 }
+                Collidered = false;
                 PositionArrivalWaitTimeNow = 0;
             }
 
@@ -43,8 +46,27 @@ public class ObjectMove : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
-        rigid.velocity = (TargetPositions[NowPosition].transform.position - this.transform.position).normalized * speed;
-
+        if (!Collidered)
+        {
+            rigid.velocity = (TargetPositions[NowPosition].transform.position - this.transform.position).normalized * speed;
+        }
+        else
+        {
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log(other.gameObject.tag);
+        if(other.gameObject.tag == "MovePosition")
+        {
+            Collidered = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "MovePosition")
+        {
+            Collidered = false;
+        }
     }
 }
