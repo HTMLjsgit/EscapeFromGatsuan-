@@ -9,9 +9,10 @@ public class ObjectMove : MonoBehaviour
     public List<Transform> TargetPositions;
     public int NowPosition = 0;
     private GameObject Player;
-    private float PositionArrivalWaitTimeNow = 0;
+    public float PositionArrivalWaitTimeNow = 0;
     public float PositionArrivalWaitTime = 3;
-    private bool Collidered; 
+    public bool Collidered;
+    public GameObject collidered_obj;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +23,14 @@ public class ObjectMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Collidered)
+        if(Collidered && collidered_obj == TargetPositions[NowPosition].gameObject)
         {
             Debug.Log("Collidered---------------!!!erew");
             PositionArrivalWaitTimeNow += Time.deltaTime;
             rigid.velocity = Vector3.zero;
             if (PositionArrivalWaitTimeNow > PositionArrivalWaitTime)
             {
+                Debug.Log("NowPOsitionNExt!");
                 if (NowPosition < TargetPositions.Count - 1)
                 {
                     NowPosition += 1;
@@ -59,6 +61,7 @@ public class ObjectMove : MonoBehaviour
         Debug.Log(other.gameObject.tag);
         if(other.gameObject.tag == "MovePosition")
         {
+            collidered_obj = other.gameObject;
             Collidered = true;
         }
     }
@@ -66,6 +69,7 @@ public class ObjectMove : MonoBehaviour
     {
         if(other.gameObject.tag == "MovePosition")
         {
+            collidered_obj = null;
             Collidered = false;
         }
     }

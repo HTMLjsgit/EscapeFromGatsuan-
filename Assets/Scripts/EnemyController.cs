@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     private GameObject Player;
     private PlayerController player_controller;
     public Collidered collidered;
+    public 
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +47,7 @@ public class EnemyController : MonoBehaviour
             }
             
             //Player‚ª“G‚Ì‹ŠEˆÈ“à‚É‚¢‚é‚©‚ğ”»’è‚·‚éB‚Ü‚¸‚Ë
-            if(Physics.Raycast(MyEyePosition.transform.position, direction,out hit, 100))
+            if(Physics.Raycast(MyEyePosition.transform.position, direction,out hit, 100000000))
             {
                 Debug.Log("tag11111: " + hit.collider.gameObject.tag);
                 //RayŒõü‚ğPlayer‚É”ò‚Î‚µ‚ÄA•Ç‚É“–‚½‚ç‚È‚¢‚©‚ÂPlayer‚É“–‚½‚Á‚½‚ç”»’è‚Æ‚·‚é‚æI

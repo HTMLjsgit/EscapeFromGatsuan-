@@ -24,6 +24,10 @@ public class EnemyMove : SerializedMonoBehaviour
     private NavMeshAgent nav_mesh_agent;
     private bool AttackStoppedOnce;
     private bool StoppedOnce;
+    [ShowIf("MoveToPlaces")]
+    public float WalkToNextPositionWaitTime = 1f;
+    [ShowIf("MoveToPlaces")]
+    public bool VectorFixedWhenMoveToPlaces; 
     public float WalkSpeed = 2;
     public bool InsideToPlayerDistance;
     public bool AttackEnd = true;
@@ -33,7 +37,7 @@ public class EnemyMove : SerializedMonoBehaviour
     private Vector3 SavePosiitonWhenChaseToPlayer;
     private bool SavePositionedOnce = false;
     private float ChaseToPlayerStartTimeNow;
-    private AudioSource GameControllersAudioSource;
+    private AudioSource RunAwayBGM;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +54,7 @@ public class EnemyMove : SerializedMonoBehaviour
         nav_mesh_agent.updatePosition = false;
         nav_mesh_agent.updateRotation = false;
         GameController = GameObject.FindWithTag("GameController");
-        GameControllersAudioSource = GameController.GetComponent<AudioSource>();
+        RunAwayBGM = GameObject.FindWithTag("MainBGM").GetComponent<MainBGM>().RunAwayBGM.GetComponent<AudioSource>();
         enemy_controller = this.gameObject.GetComponent<EnemyController>();
         if (MoveToPlaces)
         {
@@ -79,7 +83,7 @@ public class EnemyMove : SerializedMonoBehaviour
                     {
                         CountNow += 1;
                     }
-                    Invoke("MovePosition", 1f);
+                    Invoke("MovePosition", WalkToNextPositionWaitTime);
                     AlreadyWalkMoved = true;
                 }
             }
@@ -94,6 +98,7 @@ public class EnemyMove : SerializedMonoBehaviour
             if (ChaseToPlayerStartTimeNow >= 0.5f)
             {
                 Debug.Log("ChaseToPlayer‚É‚·‚é‚Í‚¸I");
+
                 ChaseToPlayer = true;
             }
             else
@@ -102,9 +107,9 @@ public class EnemyMove : SerializedMonoBehaviour
             }
             if (!SavePositionedOnce)
             {
-                if (!GameControllersAudioSource.isPlaying)
+                if (!RunAwayBGM.isPlaying)
                 {
-                    GameControllersAudioSource.Play();
+                    RunAwayBGM.Play();
                 }
                 anim.SetBool("Walk", false);
                 this.transform.forward = ToPlayerDirection;
@@ -121,11 +126,17 @@ public class EnemyMove : SerializedMonoBehaviour
                 //this.transform.position= this.transform.position - SavePosiitonWhenChaseToPlayer;
             }
         }
+        if (VectorFixedWhenMoveToPlaces)
+        {
+
+        }
         if (ChaseToPlayer)
         {
             nav_mesh_agent.enabled = true;
-
-            nav_mesh_agent.destination = Player.transform.position;
+            if(Player != null)
+            {
+                nav_mesh_agent.destination = Player.transform.position;
+            }
             if (nav_mesh_agent.path.corners.Length > 2)
             {
                 NavmeshNextPos = nav_mesh_agent.path.corners[1];
@@ -224,9 +235,5 @@ public class EnemyMove : SerializedMonoBehaviour
         Debug.Log("AttackEndChangeeeeee: " + ended);
         this.AttackEnd = ended;
     }
-    public void DeathPlayer()
-    {
-        Debug.Log("DeathhhhhhhhhhhhhhhhhhhhhPlayer");
-        PlayerAnim.SetBool("Death", true);
-    }
+
 }

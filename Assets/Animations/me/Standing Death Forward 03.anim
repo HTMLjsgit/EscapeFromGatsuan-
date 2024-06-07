@@ -95854,7 +95854,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.16666667
-    functionName: AudioPlayGO
+    functionName: DOGameOver
     data: 
     objectReferenceParameter: {fileID: 8300000, guid: 466025f959c99bc4387261a654d474a8, type: 3}
     floatParameter: 0

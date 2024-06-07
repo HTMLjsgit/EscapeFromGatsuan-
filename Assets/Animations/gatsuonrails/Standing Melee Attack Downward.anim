@@ -72058,16 +72058,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.8333333
-    functionName: DeathPlayer
+    functionName: AttackToTarget
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.8333333
-    functionName: AudioPlayGO
-    data: 
-    objectReferenceParameter: {fileID: 8300000, guid: b9e723a4786ce334b9d1b3c7f81d24eb, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

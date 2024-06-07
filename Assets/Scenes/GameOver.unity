@@ -285,7 +285,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &400700588
+--- !u!1 &601982093
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,35 +293,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 400700590}
-  - component: {fileID: 400700589}
+  - component: {fileID: 601982094}
   m_Layer: 0
-  m_Name: GameController
-  m_TagString: GameController
+  m_Name: GameControllerSetting
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &400700589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400700588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479b88d0a958e4440a5a2805937a0c25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CursorFixed: 0
---- !u!4 &400700590
+--- !u!4 &601982094
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400700588}
+  m_GameObject: {fileID: 601982093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.0761003, y: -0.43179116, z: -1.5046433}
@@ -424,6 +410,7 @@ GameObject:
   - component: {fileID: 976365926}
   - component: {fileID: 976365925}
   - component: {fileID: 976365928}
+  - component: {fileID: 976365929}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -495,10 +482,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 976365928}
-        m_TargetAssemblyTypeName: SceneMove, Assembly-CSharp
-        m_MethodName: scene_move
-        m_Mode: 5
+      - m_Target: {fileID: 976365929}
+        m_TargetAssemblyTypeName: ReviveBeforeStage, Assembly-CSharp
+        m_MethodName: ReviveStage
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -555,6 +542,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ab5e03c0f343c042aaf41a382a4b4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &976365929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976365923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9bf9826eb191ef48acc964870fd37cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1221760880
@@ -1263,4 +1262,4 @@ SceneRoots:
   - {fileID: 1847234041}
   - {fileID: 258809866}
   - {fileID: 1458734640}
-  - {fileID: 400700590}
+  - {fileID: 601982094}

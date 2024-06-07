@@ -10,15 +10,10 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("-----StageNowName: " + SceneManager.GetActiveScene().name);
         audio_source = this.gameObject.GetComponent<AudioSource>();
-        if (CursorFixed)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        CursorDOFixed(CursorFixed);
     }
 
     // Update is called once per frame
@@ -28,11 +23,34 @@ public class GameController : MonoBehaviour
     }
     public void GameOver()
     {
-        //audio_source.Play();
-        Invoke("SceneMoveToOver", 1f);
+        Invoke("SceneMoveToOver", 2f);
     }
     private void SceneMoveToOver()
     {
         SceneManager.LoadScene("GameOver");
+    }
+    private void CursorDOFixed(bool _fix)
+    {
+        if (_fix)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+
+        }
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Scene Change" + scene.name);
+        if(scene.name == "GameOver" || scene.name == "GameStart" || scene.name == "GameClear")
+        {
+            CursorDOFixed(false);
+        }
+        else
+        {
+            CursorDOFixed(true);
+        }
     }
 }

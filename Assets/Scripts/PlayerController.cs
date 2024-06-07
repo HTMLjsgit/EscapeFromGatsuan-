@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Transform PlayersEyePosition;
+    private GameController game_controller;
+    private AudioSource audio_source;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audio_source = this.gameObject.GetComponent<AudioSource>();
+        game_controller = GameObject.FindWithTag("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -16,5 +19,9 @@ public class PlayerController : MonoBehaviour
     {
         
     }
-
+    public void DOGameOver()
+    {
+        audio_source.Play();
+        game_controller.GameOver();
+    }
 }
