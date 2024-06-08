@@ -16,17 +16,20 @@ public class EnemyController : MonoBehaviour
     public float VisionFieldAngle = 80;
     private GameObject Player;
     private PlayerController player_controller;
+    private EnemyAction enemy_action;
     public Collidered collidered;
-    public 
+    public List<string> TargetLayers = new List<string>() { "Object" };
     // Start is called before the first frame update
     void Start()
     {
+        enemy_action = this.gameObject.GetComponent<EnemyAction>();
         enemy_move = this.gameObject.GetComponent<EnemyMove>();
         game_controller = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         Player = GameObject.FindWithTag("Player");
         player_controller = Player.GetComponent<PlayerController>();
         player_move_permit = Player.GetComponent<CharactorMovePermit>();
         PlayersEyePosition = player_controller.PlayersEyePosition;
+        //TargetLayers.Add("Object");
     }
 
     // Update is called once per frame
@@ -51,12 +54,13 @@ public class EnemyController : MonoBehaviour
             {
                 Debug.Log("tag11111: " + hit.collider.gameObject.tag);
                 //Ray光線をPlayerに飛ばして、壁に当たらないかつPlayerに当たったら判定とするよ！
-                if (hit.collider.gameObject.layer != LayerMask.NameToLayer("Object"))
+                Debug.Log("layerrrr:" + LayerMask.LayerToName(hit.collider.gameObject.layer));
+                if (!TargetLayers.Contains(LayerMask.LayerToName(hit.collider.gameObject.layer)))
                 {
-                    Debug.Log("tag2222: " + hit.collider.gameObject.tag);
                     if(hit.collider.gameObject.tag == "Player")
                     {
                         Debug.Log("Playerに当たりましたね！");
+                        
                         DiscoveryToPlayer = true;
                         MissedPlayer = false;
                     }
@@ -65,7 +69,7 @@ public class EnemyController : MonoBehaviour
                         //DiscoveryToPlayer = false;
                     }
                 }
-                else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Object"))
+                else if (TargetLayers.Contains(LayerMask.LayerToName(hit.collider.gameObject.layer)))
                 {
                     Debug.Log("壁に当たってると思う");
                     if (DiscoveryToPlayer)

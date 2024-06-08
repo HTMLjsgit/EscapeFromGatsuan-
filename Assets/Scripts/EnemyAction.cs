@@ -14,6 +14,7 @@ public class EnemyAction : SerializedMonoBehaviour
         public int AttackedCountForWallBreakNow;
         public ParticleSystem[] broken_dusts;
         public ParticleSystem[] attacked_wall_dusts;
+        public bool Broken;
     }
 
     private Animator anim;
@@ -34,6 +35,7 @@ public class EnemyAction : SerializedMonoBehaviour
     private float ChangeWaitTimeNow;
     private EnemyMove enemy_move;
     private AudioSource audio_source;
+    private EnemyController enemy_controller; 
     private CinemachineImpulseSource cinemachine_impulse_source;
     public Dictionary<string, float> DirectionChangeVector = new Dictionary<string, float>() { { "before", 0 },{ "after",180 } };
     // Start is called before the first frame update
@@ -42,7 +44,8 @@ public class EnemyAction : SerializedMonoBehaviour
         anim = this.gameObject.GetComponent<Animator>();
         enemy_move = this.gameObject.GetComponent<EnemyMove>();
         audio_source = this.gameObject.GetComponent<AudioSource>();
-        if(wall_break_setting != null)
+        enemy_controller = this.gameObject.GetComponent<EnemyController>();
+        if (wall_break_setting != null)
         {
             wall_break_setting.AttackedCountForWallBreakNow = wall_break_setting.AttackedCountForWallBreak;
             cinemachine_impulse_source = GameObject.FindWithTag("VirtualCamera").GetComponent<CinemachineImpulseSource>();
@@ -113,6 +116,8 @@ public class EnemyAction : SerializedMonoBehaviour
             {
                 ps.Play();
             }
+            wall_break_setting.Broken = true;
+            enemy_controller.DiscoveryToPlayer = true;
             Destroy(wall_break_setting.TargetWall);
             cinemachine_impulse_source.GenerateImpulse();
         }

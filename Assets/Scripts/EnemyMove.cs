@@ -72,7 +72,14 @@ public class EnemyMove : SerializedMonoBehaviour
             nav_mesh_agent.enabled = false;
             if (!AlreadyWalkMoved)
             {
-                this.transform.forward = new Vector3(TargetDiff.x, 0, TargetDiff.z);
+                if (VectorFixedWhenMoveToPlaces)
+                {
+                    Debug.Log("TargetDiff: " + TargetDiff);
+                }
+                else
+                {
+                    this.transform.forward = new Vector3(TargetDiff.x, 0, TargetDiff.z);
+                }
                 if (Vector3.Distance(this.transform.position, TargetPosition) < 0.5f)
                 {
                     if (CountNow + 1 >= ToMovePlaces.Length)
@@ -87,7 +94,28 @@ public class EnemyMove : SerializedMonoBehaviour
                     AlreadyWalkMoved = true;
                 }
             }
-            anim.SetBool("Walk", !AlreadyWalkMoved);
+            if (!VectorFixedWhenMoveToPlaces)
+            {
+                anim.SetBool("Walk", !AlreadyWalkMoved);
+                anim.SetBool("HorizontalRun", false);
+            }
+            else
+            {
+                //横に歩くアニメーション
+                Debug.Log("YOKONIUGOKU");
+                anim.SetBool("HorizontalRun", true);
+                float x = 0;
+                if(TargetDiff.x > 0)
+                {
+                     x = 1;
+                }
+                else
+                {
+                     x = -1;
+                }
+                Debug.Log("TargetEDiff:" + TargetDiff);
+                anim.SetFloat("DirectionX", x);
+            }
             anim.SetBool("Run", false);
         }
 
@@ -126,10 +154,7 @@ public class EnemyMove : SerializedMonoBehaviour
                 //this.transform.position= this.transform.position - SavePosiitonWhenChaseToPlayer;
             }
         }
-        if (VectorFixedWhenMoveToPlaces)
-        {
 
-        }
         if (ChaseToPlayer)
         {
             nav_mesh_agent.enabled = true;

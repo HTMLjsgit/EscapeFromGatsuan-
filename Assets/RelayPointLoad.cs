@@ -11,11 +11,14 @@ public class RelayPointLoad : MonoBehaviour
     {
         GameController = GameObject.FindWithTag("GameController");
         relay_point_save = GameController.GetComponent<RelayPointSave>();
-        //if(relay_point_save.BeforeStageName == SceneManager.GetActiveScene().name 
-        //   && relay_point_save.SavedPlayerPosition.magnitude != 0)
-        //{
-        //    this.transform.position = relay_point_save.SavedPlayerPosition;
-        //}
+        if (relay_point_save.SavedPlayerPosition.magnitude != 0 )
+        {
+            this.transform.position = relay_point_save.SavedPlayerPosition;
+        }
+        else
+        {
+            relay_point_save.AlreadySaved = false;
+        }
     }
 
     // Update is called once per frame

@@ -722,6 +722,7 @@ MonoBehaviour:
   CountNow: 0
   ChaseToPlayer: 0
   WalkToNextPositionWaitTime: 1
+  VectorFixedWhenMoveToPlaces: 0
   WalkSpeed: 2
   InsideToPlayerDistance: 0
   AttackEnd: 1
@@ -764,6 +765,8 @@ MonoBehaviour:
   MissedPlayer: 0
   VisionFieldAngle: 45
   collidered: {fileID: 2995716302084006395}
+  TargetLayer:
+  - Object
 --- !u!114 &3345290718789067555
 MonoBehaviour:
   m_ObjectHideFlags: 0

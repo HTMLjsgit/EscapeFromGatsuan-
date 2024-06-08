@@ -6,8 +6,9 @@ public class RelayPointSave : MonoBehaviour
 {
     public Vector3 SavedPlayerPosition;
     public string BeforeStageNameForMoment;
-    public string BeforeStageName;
+    public List<string> VisitStageHistories;
     public string NowStageName;
+    public bool AlreadySaved;
     private string BeforeStageNameSave;
     private GameObject Player;
     // Start is called before the first frame update
@@ -15,10 +16,6 @@ public class RelayPointSave : MonoBehaviour
     {
         SceneManager.sceneLoaded += SceneLoaded;
         SceneManager.sceneUnloaded += UnLoaded;
-        if(BeforeStageName == "")
-        {
-            BeforeStageName = SceneManager.GetActiveScene().name;
-        }
         NowStageName = SceneManager.GetActiveScene().name;
     }
 
@@ -29,14 +26,19 @@ public class RelayPointSave : MonoBehaviour
     }
     public void Save(Vector3 PlayerPos)
     {
+        AlreadySaved = true;
         this.SavedPlayerPosition = PlayerPos;
+
     }
     private void UnLoaded(Scene scene)
     {
         Debug.Log(SceneManager.GetActiveScene().name);
-        if (scene.name.Contains("Scene") && BeforeStageName != scene.name && NowStageName != BeforeStageName)
+        if (scene.name.Contains("Scene"))
         {
-            BeforeStageName = scene.name;
+            if (!VisitStageHistories.Contains(scene.name))
+            {
+                VisitStageHistories.Add(scene.name);
+            }
         }
     }
     private void SceneLoaded(Scene scene,LoadSceneMode mode)

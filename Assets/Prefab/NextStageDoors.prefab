@@ -434,6 +434,10 @@ PrefabInstance:
       propertyPath: ActionWhenOpenFunc.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7150731166540236691, guid: 36fab1e4aa9a54c47b428ca11f30db91, type: 3}
+      propertyPath: NextStageByDoor
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
