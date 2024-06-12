@@ -52,9 +52,7 @@ public class EnemyController : MonoBehaviour
             //Playerが敵の視界以内にいるかを判定する。まずね
             if(Physics.Raycast(MyEyePosition.transform.position, direction,out hit, 100000000))
             {
-                Debug.Log("tag11111: " + hit.collider.gameObject.tag);
                 //Ray光線をPlayerに飛ばして、壁に当たらないかつPlayerに当たったら判定とするよ！
-                Debug.Log("layerrrr:" + LayerMask.LayerToName(hit.collider.gameObject.layer));
                 if (!TargetLayers.Contains(LayerMask.LayerToName(hit.collider.gameObject.layer)))
                 {
                     if(hit.collider.gameObject.tag == "Player")
@@ -71,7 +69,6 @@ public class EnemyController : MonoBehaviour
                 }
                 else if (TargetLayers.Contains(LayerMask.LayerToName(hit.collider.gameObject.layer)))
                 {
-                    Debug.Log("壁に当たってると思う");
                     if (DiscoveryToPlayer)
                     {
                         MissedPlayer = true;

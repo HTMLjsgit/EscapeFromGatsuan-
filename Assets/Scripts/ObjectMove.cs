@@ -25,12 +25,10 @@ public class ObjectMove : MonoBehaviour
     {
         if(Collidered && collidered_obj == TargetPositions[NowPosition].gameObject)
         {
-            Debug.Log("Collidered---------------!!!erew");
             PositionArrivalWaitTimeNow += Time.deltaTime;
             rigid.velocity = Vector3.zero;
             if (PositionArrivalWaitTimeNow > PositionArrivalWaitTime)
             {
-                Debug.Log("NowPOsitionNExt!");
                 if (NowPosition < TargetPositions.Count - 1)
                 {
                     NowPosition += 1;
@@ -58,7 +56,6 @@ public class ObjectMove : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.gameObject.tag);
         if(other.gameObject.tag == "MovePosition")
         {
             collidered_obj = other.gameObject;

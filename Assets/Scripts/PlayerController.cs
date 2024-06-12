@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public Transform PlayersEyePosition;
     private GameController game_controller;
     private AudioSource audio_source;
+    public GameObject BodyPositionObj;
     // Start is called before the first frame update
     void Start()
     {

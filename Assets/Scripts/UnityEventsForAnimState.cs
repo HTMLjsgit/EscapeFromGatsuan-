@@ -13,6 +13,9 @@ public class UnityEventsForAnimState : SerializedMonoBehaviour
     [Space]
     [Space]
     public Dictionary<string, UnityEvent> AnimExitEvent;
+
+    [Header("AnimationEvent‚ğÀs‚·‚é‚½‚ß‚Ì•Ï”‚½‚¿")]
+    public Dictionary<string, UnityEvent> AnimEvent;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +26,9 @@ public class UnityEventsForAnimState : SerializedMonoBehaviour
     void Update()
     {
         
+    }
+    public void AnimEventInvoke(string event_name)
+    {
+        AnimEvent[event_name].Invoke();
     }
 }

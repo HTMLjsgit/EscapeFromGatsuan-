@@ -5,13 +5,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+   public enum MoveMode
+    {
+        Run,
+        Walk
+    }
     private GameObject GameController;
     private Rigidbody rigid;
     private PlayerInput player_input;
     private Vector2 Move;
     public float RunSpeed;
+    public float WalkSpped;
     public float CrouchSpeed;
     public bool MovePermit = true;
+    public MoveMode move_mode;
     private Vector2 MousePosition;
     private Animator anim;
     private bool Crouch;
@@ -31,7 +38,22 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Move = player_input.currentActionMap["Move"].ReadValue<Vector2>();
+        if (player_input.currentActionMap["MoveModeChange"].triggered)
+        {
+            if(move_mode == MoveMode.Run)
+            {
+                move_mode = MoveMode.Walk;
 
+            }
+            else if(move_mode == MoveMode.Walk)
+            {
+                move_mode = MoveMode.Run;
+            }
+
+        }
+        else
+        {
+        }
         if (player_input.currentActionMap["Crouch"].triggered)
         {
 
@@ -63,8 +85,17 @@ public class PlayerMovement : MonoBehaviour
             direction_change_once = false;
             anim.SetBool("Move", false);
         }
-        anim.SetFloat("DirectionX", Move.x);
-        anim.SetFloat("DirectionY", Move.y);
+        if(move_mode == MoveMode.Run)
+        {
+            anim.SetFloat("DirectionX", Move.x);
+            anim.SetFloat("DirectionY", Move.y);
+        }
+        else if(move_mode == MoveMode.Walk)
+        {
+            anim.SetFloat("DirectionX", Move.x  / 2f);
+            anim.SetFloat("DirectionY", Move.y / 2f);
+        }
+
     }
     private void FixedUpdate()
     {
@@ -72,7 +103,14 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!Crouch)
             {
-                rigid.velocity = (transform.forward * Move.y + transform.right * Move.x) * RunSpeed;
+                if(MoveMode.Run == move_mode)
+                {
+                    rigid.velocity = (transform.forward * Move.y + transform.right * Move.x) * RunSpeed;
+                }
+                else if(MoveMode.Walk == move_mode)
+                {
+                    rigid.velocity = (transform.forward * Move.y + transform.right * Move.x) * WalkSpped;
+                }
             }
             else
             {

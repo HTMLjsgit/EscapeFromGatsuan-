@@ -712,6 +712,32 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &3683778963855361572
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Standing Death Forward 02
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: eca195167b87d1f4495638e38be6a475, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1107 &3847797985032279660
 AnimatorStateMachine:
   serializedVersion: 6
@@ -732,7 +758,7 @@ AnimatorStateMachine:
     m_Position: {x: 680, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8762608485426989660}
-    m_Position: {x: 430, y: 90, z: 0}
+    m_Position: {x: 390, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3556454764173064156}
     m_Position: {x: 640, y: 230, z: 0}
@@ -744,7 +770,7 @@ AnimatorStateMachine:
     m_Position: {x: 670, y: -160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6622361223812857945}
-    m_Position: {x: 450, y: -180, z: 0}
+    m_Position: {x: 370, y: -270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5995597366148338363}
     m_Position: {x: 250, y: 180, z: 0}
@@ -763,6 +789,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 904609959685416572}
     m_Position: {x: 590, y: 0, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 3683778963855361572}
+    m_Position: {x: 540, y: 90, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

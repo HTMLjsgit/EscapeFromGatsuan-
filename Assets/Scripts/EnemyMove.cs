@@ -74,7 +74,6 @@ public class EnemyMove : SerializedMonoBehaviour
             {
                 if (VectorFixedWhenMoveToPlaces)
                 {
-                    Debug.Log("TargetDiff: " + TargetDiff);
                 }
                 else
                 {
@@ -102,7 +101,6 @@ public class EnemyMove : SerializedMonoBehaviour
             else
             {
                 //横に歩くアニメーション
-                Debug.Log("YOKONIUGOKU");
                 anim.SetBool("HorizontalRun", true);
                 float x = 0;
                 if(TargetDiff.x > 0)
@@ -113,7 +111,6 @@ public class EnemyMove : SerializedMonoBehaviour
                 {
                      x = -1;
                 }
-                Debug.Log("TargetEDiff:" + TargetDiff);
                 anim.SetFloat("DirectionX", x);
             }
             anim.SetBool("Run", false);

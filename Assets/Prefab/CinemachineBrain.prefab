@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4320142468799200382}
   - component: {fileID: 798170822938368050}
   - component: {fileID: 1616146101569113578}
+  - component: {fileID: 7330149197517016971}
   m_Layer: 0
   m_Name: CinemachineBrain
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1069300380691354079}
   serializedVersion: 2
   m_LocalRotation: {x: 0.097148634, y: 0, z: 0, w: 0.9952699}
-  m_LocalPosition: {x: 172.0664, y: 4.224854, z: -31.713001}
+  m_LocalPosition: {x: -47.73359, y: 4.2356505, z: -34.19985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -118,3 +119,16 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7330149197517016971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069300380691354079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85f206dc48a2f0489dfd1be5ef18b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VirtualCamera: {fileID: 0}
