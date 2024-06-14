@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RunSpeed: 10
-  WalkSpped: 2
+  WalkSpped: 6
   CrouchSpeed: 6
   MovePermit: 1
   move_mode: 0
