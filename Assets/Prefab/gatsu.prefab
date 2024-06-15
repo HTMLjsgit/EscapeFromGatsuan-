@@ -772,6 +772,7 @@ MonoBehaviour:
   collidered: {fileID: 2995716302084006395}
   TargetLayers:
   - Object
+  PermitDiscoveryToPlayer: 1
 --- !u!114 &3345290718789067555
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     private EnemyAction enemy_action;
     public Collidered collidered;
     public List<string> TargetLayers = new List<string>() { "Object" };
+    public bool PermitDiscoveryToPlayer = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,9 +59,11 @@ public class EnemyController : MonoBehaviour
                     if(hit.collider.gameObject.tag == "Player")
                     {
                         Debug.Log("PlayerÇ…ìñÇΩÇËÇ‹ÇµÇΩÇÀÅI");
-                        
-                        DiscoveryToPlayer = true;
-                        MissedPlayer = false;
+                        if (PermitDiscoveryToPlayer)
+                        {
+                            DiscoveryToPlayer = true;
+                            MissedPlayer = false;
+                        }
                     }
                     else
                     {

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class GatsuBeltoMan : MonoBehaviour
 {
     [HideInInspector]
@@ -11,6 +11,10 @@ public class GatsuBeltoMan : MonoBehaviour
     public Vector3 VectorDiffToNextArea;
     private Animator anim;
     private float ToNextPointDistance;
+    public float speed;
+    PlayerInput player_input;
+    [HideInInspector]
+    public BeltoAreaController.BeltoManStatus target_belto_man_status;
     public enum GatsuManOrTransParent
     {
         GatsuMan,
@@ -27,12 +31,12 @@ public class GatsuBeltoMan : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(belto_area_controller == null)
+        if(belto_area_controller == null || target_belto_man_status == null)
         {
             return;
         }
-        //Createされたときに個々のBeltoCountNowを増やしたいね。
-        BeltoCountNow = belto_area_controller.BeltoManLists.IndexOf(this.gameObject.transform);
+        //Createされたときに個々のBeltoCountNowを増やしたい。
+        BeltoCountNow = target_belto_man_status.index;
         if (belto_area_controller.BeltoColliderAreaPositions.Count  <= BeltoCountNow)
         {
             belto_area_controller.BeltoManLists.Remove(this.gameObject.transform);
@@ -42,10 +46,20 @@ public class GatsuBeltoMan : MonoBehaviour
         {
             VectorDiffToNextArea = (belto_area_controller.BeltoColliderAreaPositions[BeltoCountNow].position - this.transform.position).normalized;
             ToNextPointDistance = Vector3.Distance(this.transform.position, belto_area_controller.BeltoColliderAreaPositions[BeltoCountNow].transform.position);
+            this.transform.forward = VectorDiffToNextArea;
         }
         if(Mathf.Round(ToNextPointDistance) == 0)
         {
             //次のエリアとの距離が０になったとき
+            target_belto_man_status.AlreadyPassedToPoint = true;
+        }
+        else
+        {
+            target_belto_man_status.AlreadyPassedToPoint = false;
+        }
+        if(anim != null)
+        {
+            anim.SetBool("Walk", !target_belto_man_status.AlreadyPassedToPoint);
         }
 
     }
@@ -55,21 +69,14 @@ public class GatsuBeltoMan : MonoBehaviour
         {
             return;
         }
-        if (belto_area_controller.FirstBeltoAreaAlreadyPassed)
+        if (target_belto_man_status.AlreadyPassedToPoint)
         {
             rigid.velocity = Vector3.zero;
-            if(anim != null)
-            {
-                anim.SetBool("Move", false);
-            }
+
         }
         else
         {
-            rigid.velocity = VectorDiffToNextArea * 10;
-            if (anim != null)
-            {
-                anim.SetBool("Move", true);
-            }
+            rigid.velocity = VectorDiffToNextArea * speed;
         }
 
     }

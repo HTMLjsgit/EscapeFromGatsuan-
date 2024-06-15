@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq; 
 using Sirenix.OdinInspector;
 public class BeltoAreaController : SerializedMonoBehaviour
 {
+    public class BeltoManStatus
+    {
+        public int index;
+        public bool AlreadyPassedToPoint = false;
+        public BeltoManStatus(int _index, bool _AlreadyPassedToPoint)
+        {
+            this.index = _index;
+            this.AlreadyPassedToPoint = _AlreadyPassedToPoint;
+        }
+    }
     public CreateGatsuBeltoPos create_gatsu_belto_pos;
 
     public List<Transform> BeltoColliderAreaPositions;
-    public List<Transform> BeltoManLists;
+
+    public Dictionary<Transform, BeltoManStatus> BeltoManLists;
     public bool FirstBeltoAreaAlreadyPassed = true;
     public float WaitBeltoAreaToNextPointTime = 1;
     private float WaitBeltoAreaToNextPointTimeNow = 1;
     public GameObject gatsu_belto_prefab;
     public GameObject toumei_prefab;
+    private GameObject Player;
+    private bool PlayerIntoBeltoArea;
+    public float BeltoGatsuManSpeed;
+    //最終チェックを得てこいつがfalseならば条件クリアできている
+    private bool BeltoAreaError;
     [Button]
     public void Create()
     {
@@ -33,17 +50,49 @@ public class BeltoAreaController : SerializedMonoBehaviour
         gatsu_belto_man_script = gatsu_belto_man.GetComponent<GatsuBeltoMan>();
         gatsu_belto_man_script.belto_area_controller = this;
         gatsu_belto_man_script.gatsuman_or_transparentman = who;
-        BeltoManLists.Insert(0, gatsu_belto_man.transform);
+        Debug.Log(BeltoManLists.Count);
+        foreach(KeyValuePair<Transform, BeltoManStatus> b in BeltoManLists)
+        {
+            b.Value.index += 1;
+        }
+        BeltoManStatus belto_man_status;
+        belto_man_status = new BeltoManStatus(0, false);
+        gatsu_belto_man_script.target_belto_man_status = belto_man_status;
+        gatsu_belto_man_script.speed = this.BeltoGatsuManSpeed;
+        BeltoManLists.Add(gatsu_belto_man.transform, belto_man_status);
+
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (PlayerIntoBeltoArea)
+        {
+            //まずはベルト判断エリアにいるのかどうか。
+            
+        }
+        else
+        {
+            //BeltoAreaError = true;
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            PlayerIntoBeltoArea = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            PlayerIntoBeltoArea = false;
+        }
     }
 }
