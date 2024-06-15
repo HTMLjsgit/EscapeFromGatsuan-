@@ -16,6 +16,8 @@ public class BeltoAreaController : SerializedMonoBehaviour
             this.AlreadyPassedToPoint = _AlreadyPassedToPoint;
         }
     }
+    public GameObject EnemyGatsu;
+    private EnemyController enemy_controller;
     public CreateGatsuBeltoPos create_gatsu_belto_pos;
 
     public List<Transform> BeltoColliderAreaPositions;
@@ -27,19 +29,23 @@ public class BeltoAreaController : SerializedMonoBehaviour
     public GameObject gatsu_belto_prefab;
     public GameObject toumei_prefab;
     private GameObject Player;
+    private Rigidbody player_rigid;
     private bool PlayerIntoBeltoArea;
+    private float BeltoCreateTimeNow = 0;
     public float BeltoGatsuManSpeed;
-    private bool AllAlreadyPassedToPoint = true;
+    //[HideInInspector]
+    public Dictionary<GameObject, bool> AllAlreadyPassedPoints = new Dictionary<GameObject, bool>();
     //最終チェックを得てこいつがfalseならば条件クリアできている
-    private bool BeltoAreaError;
+    //Trueになったら急に襲ってくるようにするよ
+    public bool BeltoAreaError;
     [Button]
     public void Create()
     {
-        int r = Random.Range(0,5);
+        int r = Random.Range(0,3);
         GameObject gatsu_belto_man;
         GatsuBeltoMan gatsu_belto_man_script;
         GatsuBeltoMan.GatsuManOrTransParent who;
-        if (r == 3)
+        if (r == 2)
         {
             gatsu_belto_man = Instantiate(toumei_prefab, create_gatsu_belto_pos.transform.position, Quaternion.identity);
             who = GatsuBeltoMan.GatsuManOrTransParent.TransparentMan;
@@ -62,34 +68,49 @@ public class BeltoAreaController : SerializedMonoBehaviour
         gatsu_belto_man_script.target_belto_man_status = belto_man_status;
         gatsu_belto_man_script.speed = this.BeltoGatsuManSpeed;
         BeltoManLists.Add(gatsu_belto_man.transform, belto_man_status);
-        AllAlreadyPassedToPoint = true;
+        AllAlreadyPassedPoints.Add(gatsu_belto_man, false);
     }
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.FindWithTag("Player");
+        player_rigid = Player.GetComponent<Rigidbody>();
+        enemy_controller = EnemyGatsu.GetComponent<EnemyController>();
+        Create();
+        PlayerIntoBeltoArea = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         //AllAlreadyPassedToPoint = true;
-        foreach (KeyValuePair<Transform, BeltoManStatus> transform_belto in BeltoManLists)
-        {
-            if (!transform_belto.Value.AlreadyPassedToPoint)
-            {
-                //AllAlreadyPassedToPoint = false;
-            }
-        }
         if (PlayerIntoBeltoArea)
         {
-            //まずはベルト判断エリアにいるのかどうか。
-            
+            if(AllAlreadyPassedPoints.ContainsValue(false))
+            {
+                //まだMoveしている最中の人がいる
+                BeltoCreateTimeNow = 0;
+            }
+            else
+            {
+                //全員Moveが終わった状態
+                BeltoCreateTimeNow += Time.deltaTime;
+                if(BeltoCreateTimeNow > 1)
+                {
+                    Create();
+                }
+                if (Mathf.Floor(player_rigid.velocity.magnitude) == 0)
+                {
+                    //全員Moveが終わっているのにPlayerが動いていたら発見される。
+                    BeltoAreaError = true;
+                }
+            }
         }
-        else
+        if (BeltoAreaError)
         {
-            //BeltoAreaError = true;
+            enemy_controller.PermitDiscoveryToPlayer = true;
         }
+
     }
     private void OnTriggerStay(Collider other)
     {

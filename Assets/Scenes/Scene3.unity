@@ -2103,6 +2103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 58593534}
   - component: {fileID: 58593535}
+  - component: {fileID: 58593536}
   m_Layer: 0
   m_Name: TargetMoveArea1 (6)
   m_TagString: Untagged
@@ -2146,6 +2147,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.9591293, y: 0.20235157, z: 7.383916}
   m_Center: {x: -0.15377426, y: -0.14547205, z: 0.44555712}
+--- !u!114 &58593536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58593533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d29b3db3f500445a4cad3a406bcbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsInArea: []
 --- !u!1001 &60594389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2223,6 +2237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105261134}
   - component: {fileID: 105261135}
+  - component: {fileID: 105261136}
   m_Layer: 0
   m_Name: TargetMoveArea1 (4)
   m_TagString: Untagged
@@ -2266,6 +2281,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.6130905, y: 0.28728867, z: 7.5723333}
   m_Center: {x: 0.14221573, y: -0.35635567, z: 0.534328}
+--- !u!114 &105261136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105261133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d29b3db3f500445a4cad3a406bcbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsInArea: []
 --- !u!1 &212939924
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,6 +2467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 330648926}
   - component: {fileID: 330648927}
+  - component: {fileID: 330648928}
   m_Layer: 0
   m_Name: TargetMoveArea1 (2)
   m_TagString: Untagged
@@ -2482,6 +2511,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.8352127, y: 0.69, z: 7.74}
   m_Center: {x: 0.18185043, y: 0, z: 0.5}
+--- !u!114 &330648928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330648925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d29b3db3f500445a4cad3a406bcbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsInArea: []
 --- !u!1 &333755497
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,6 +2534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 333755498}
   - component: {fileID: 333755499}
+  - component: {fileID: 333755500}
   m_Layer: 0
   m_Name: TargetMoveArea1 (5)
   m_TagString: Untagged
@@ -2535,6 +2578,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.8947067, y: 0.19271326, z: 7.780325}
   m_Center: {x: -0.8993492, y: -0.40364337, z: 0.7750025}
+--- !u!114 &333755500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333755497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d29b3db3f500445a4cad3a406bcbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsInArea: []
 --- !u!1 &373106799 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6192669123003715847, guid: 21de90dd848b0d64caebe4a92696623e, type: 3}
@@ -3299,6 +3355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 633660607}
   - component: {fileID: 633660608}
+  - component: {fileID: 633660609}
   m_Layer: 0
   m_Name: TargetMoveArea1 (1)
   m_TagString: Untagged
@@ -3342,6 +3399,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.845543, y: 0.2997055, z: 7.78059}
   m_Center: {x: 1.0023117, y: -0.35014725, z: 0.85092354}
+--- !u!114 &633660609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633660606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d29b3db3f500445a4cad3a406bcbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsInArea: []
 --- !u!1001 &671264688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3729,6 +3799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 884986552}
   - component: {fileID: 884986553}
+  - component: {fileID: 884986554}
   m_Layer: 0
   m_Name: TargetMoveArea1
   m_TagString: Untagged
@@ -3772,6 +3843,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.4596405, y: 0.21826553, z: 7.78059}
   m_Center: {x: 1.1952629, y: -0.39086723, z: 0.85092354}
+--- !u!114 &884986554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884986551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d29b3db3f500445a4cad3a406bcbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsInArea: []
 --- !u!1 &895705372
 GameObject:
   m_ObjectHideFlags: 0
@@ -6045,6 +6129,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: AllAlreadyPassedPoints
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[UnityEngine.GameObject, UnityEngine.CoreModule],[System.Boolean,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.ObjectEqualityComparer`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  EnemyGatsu: {fileID: 2107151146}
   create_gatsu_belto_pos: {fileID: 1458969732}
   BeltoColliderAreaPositions:
   - {fileID: 884986552}
@@ -6060,7 +6165,8 @@ MonoBehaviour:
   WaitBeltoAreaToNextPointTime: 1
   gatsu_belto_prefab: {fileID: 8082689413147076237, guid: 10da9344585effe4fabf3ce3fa159580, type: 3}
   toumei_prefab: {fileID: 2913390780184962310, guid: 09aaa611c9719474b9d62d7f8f63eb0f, type: 3}
-  BeltoGatsuManSpeed: 4
+  BeltoGatsuManSpeed: 8
+  BeltoAreaError: 0
 --- !u!65 &1423759169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6125,6 +6231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1449533246}
   - component: {fileID: 1449533247}
+  - component: {fileID: 1449533248}
   m_Layer: 0
   m_Name: TargetMoveArea1 (7)
   m_TagString: Untagged
@@ -6168,6 +6275,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.844009, y: 0.47823524, z: 8.096824}
   m_Center: {x: 0.7639084, y: -0.26088238, z: 0.6316123}
+--- !u!114 &1449533248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449533245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d29b3db3f500445a4cad3a406bcbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsInArea: []
 --- !u!1 &1458969730
 GameObject:
   m_ObjectHideFlags: 0
@@ -6855,6 +6975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1623146576}
   - component: {fileID: 1623146577}
+  - component: {fileID: 1623146578}
   m_Layer: 0
   m_Name: TargetMoveArea1 (3)
   m_TagString: Untagged
@@ -6898,6 +7019,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.797958, y: 0.36196995, z: 7.8236046}
   m_Center: {x: 0.7261276, y: -0.31901503, z: 0.60975266}
+--- !u!114 &1623146578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623146575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d29b3db3f500445a4cad3a406bcbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsInArea: []
 --- !u!1 &1669637522
 GameObject:
   m_ObjectHideFlags: 0
@@ -7286,6 +7420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1891410290}
   - component: {fileID: 1891410291}
+  - component: {fileID: 1891410292}
   m_Layer: 0
   m_Name: TargetMoveArea1 (8)
   m_TagString: Untagged
@@ -7329,6 +7464,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.71492, y: 0.20620918, z: 6.8309126}
   m_Center: {x: 0.71806335, y: -0.3968954, z: 0.47041655}
+--- !u!114 &1891410292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891410289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d29b3db3f500445a4cad3a406bcbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectsInArea: []
 --- !u!1 &2035964082
 GameObject:
   m_ObjectHideFlags: 0
@@ -7373,6 +7521,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2107151146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
+  m_PrefabInstance: {fileID: 1297207798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7574623330686168186
 PrefabInstance:
   m_ObjectHideFlags: 0

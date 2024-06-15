@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
 using Sirenix.OdinInspector;
+using DG.Tweening;
 public class PlayAbleStartEndEvents : SerializedMonoBehaviour
 {
     public UnityEvent StartEvent;

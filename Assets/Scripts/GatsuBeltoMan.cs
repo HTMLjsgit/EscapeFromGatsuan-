@@ -40,6 +40,7 @@ public class GatsuBeltoMan : MonoBehaviour
         if (belto_area_controller.BeltoColliderAreaPositions.Count  <= BeltoCountNow)
         {
             belto_area_controller.BeltoManLists.Remove(this.gameObject.transform);
+            belto_area_controller.AllAlreadyPassedPoints.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
         else
@@ -53,12 +54,14 @@ public class GatsuBeltoMan : MonoBehaviour
         {
             //ŽŸ‚ÌƒGƒŠƒA‚Æ‚Ì‹——£‚ª‚O‚É‚È‚Á‚½‚Æ‚«
             target_belto_man_status.AlreadyPassedToPoint = true;
+            belto_area_controller.AllAlreadyPassedPoints[this.gameObject] = true;
         }
         else
         {
             target_belto_man_status.AlreadyPassedToPoint = false;
+            belto_area_controller.AllAlreadyPassedPoints[this.gameObject] = false;
         }
-        if(anim != null)
+        if (anim != null)
         {
             anim.SetBool("Walk", !target_belto_man_status.AlreadyPassedToPoint);
         }
