@@ -9,6 +9,7 @@ public class BeltoAreaController : SerializedMonoBehaviour
     {
         public int index;
         public bool AlreadyPassedToPoint = false;
+        public Transform PointPos;
         public BeltoManStatus(int _index, bool _AlreadyPassedToPoint)
         {
             this.index = _index;
@@ -28,6 +29,7 @@ public class BeltoAreaController : SerializedMonoBehaviour
     private GameObject Player;
     private bool PlayerIntoBeltoArea;
     public float BeltoGatsuManSpeed;
+    private bool AllAlreadyPassedToPoint = true;
     //最終チェックを得てこいつがfalseならば条件クリアできている
     private bool BeltoAreaError;
     [Button]
@@ -60,7 +62,7 @@ public class BeltoAreaController : SerializedMonoBehaviour
         gatsu_belto_man_script.target_belto_man_status = belto_man_status;
         gatsu_belto_man_script.speed = this.BeltoGatsuManSpeed;
         BeltoManLists.Add(gatsu_belto_man.transform, belto_man_status);
-
+        AllAlreadyPassedToPoint = true;
     }
     // Start is called before the first frame update
     void Start()
@@ -71,6 +73,14 @@ public class BeltoAreaController : SerializedMonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //AllAlreadyPassedToPoint = true;
+        foreach (KeyValuePair<Transform, BeltoManStatus> transform_belto in BeltoManLists)
+        {
+            if (!transform_belto.Value.AlreadyPassedToPoint)
+            {
+                //AllAlreadyPassedToPoint = false;
+            }
+        }
         if (PlayerIntoBeltoArea)
         {
             //まずはベルト判断エリアにいるのかどうか。

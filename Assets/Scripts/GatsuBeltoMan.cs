@@ -44,7 +44,8 @@ public class GatsuBeltoMan : MonoBehaviour
         }
         else
         {
-            VectorDiffToNextArea = (belto_area_controller.BeltoColliderAreaPositions[BeltoCountNow].position - this.transform.position).normalized;
+            target_belto_man_status.PointPos = belto_area_controller.BeltoColliderAreaPositions[BeltoCountNow];
+            VectorDiffToNextArea = (target_belto_man_status.PointPos.position - this.transform.position).normalized;
             ToNextPointDistance = Vector3.Distance(this.transform.position, belto_area_controller.BeltoColliderAreaPositions[BeltoCountNow].transform.position);
             this.transform.forward = VectorDiffToNextArea;
         }
