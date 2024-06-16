@@ -5,6 +5,7 @@ using Cinemachine;
 public class TransparentWall : MonoBehaviour
 {
     public GameObject VirtualCamera;
+    public List<string> TargetLayers;
     private GameObject Player;
     private PlayerController player_controller;
     private RaycastHit raycast_hit;
@@ -34,9 +35,8 @@ public class TransparentWall : MonoBehaviour
                 }
 
             }
-            else if(LayerMask.LayerToName(raycast_hit.collider.gameObject.layer) == "Object")
+            else if(TargetLayers.Contains(LayerMask.LayerToName(raycast_hit.collider.gameObject.layer)))
             {
-                Debug.Log("ObjÇ…ìñÇΩÇ¡ÇƒÇÈÇÊplayerå©Ç¶Ç‹ÇπÇÒÅI");
                 DOFadeMaterial do_fade_material;
                 do_fade_material = raycast_hit.collider.gameObject.GetComponent<DOFadeMaterial>();
                 if(do_fade_materials != null)

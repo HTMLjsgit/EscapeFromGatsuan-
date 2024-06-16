@@ -22,7 +22,6 @@ public class DOFadeMaterial : SerializedMonoBehaviour
     [Button]
     public void DOFade(float transparent_color)
     {
-        Debug.Log(mesh_renderer.material.renderQueue);
         if(transparent_color == 1)
         {
             StandardShaderUtils.ChangeRenderMode(mesh_renderer.material, StandardShaderUtils.BlendMode.Opaque);

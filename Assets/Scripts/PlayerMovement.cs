@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public MoveMode move_mode;
     private Vector2 MousePosition;
     private Animator anim;
-    private bool Crouch;
+    public bool Crouch;
     private bool direction_change_once;
     private DirectionChangeFromCameraDIrection direction_change;
     // Start is called before the first frame update

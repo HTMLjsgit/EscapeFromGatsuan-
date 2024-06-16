@@ -58,7 +58,6 @@ public class EnemyController : MonoBehaviour
                 {
                     if(hit.collider.gameObject.tag == "Player")
                     {
-                        Debug.Log("PlayerÇ…ìñÇΩÇËÇ‹ÇµÇΩÇÀÅI");
                         if (PermitDiscoveryToPlayer)
                         {
                             DiscoveryToPlayer = true;

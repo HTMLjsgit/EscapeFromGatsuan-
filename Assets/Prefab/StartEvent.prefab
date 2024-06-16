@@ -174,6 +174,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 769278800337578542, guid: 2edf2ee08dd469a4a87457d3ddcff881, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 2548818766143678984, guid: 2edf2ee08dd469a4a87457d3ddcff881, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - c5cb55ece873658448c1f147e95fabd3: {fileID: 0}
@@ -307,6 +309,7 @@ MonoBehaviour:
         m_CallState: 2
   PlayOnAwake: 1
   fade_controller: {fileID: 8569456221563220258}
+  skip_fade_controller: {fileID: 0}
 --- !u!1 &8520025733413001120
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +446,7 @@ MonoBehaviour:
   StartFadeIn: 0
   StartFadeOut: 0
   EventInvokeTimeWait: 0
+  AlreadyEnded: 0
 --- !u!225 &8285173440179560107
 CanvasGroup:
   m_ObjectHideFlags: 0

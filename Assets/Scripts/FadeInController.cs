@@ -39,7 +39,6 @@ public class FadeController : SerializedMonoBehaviour
     {
         if (CanvasGroup && !AlreadyEnded)
         {
-            Debug.Log("FadeInnnnnnnnnnnSkipppppp");
             tween = canvas_group.DOFade(1,duration).SetLink(this.gameObject).SetEase(Ease.Linear).OnComplete(() => {
                 StartCoroutine(WaitInvoke(FadeInCompleteEvent));
             });

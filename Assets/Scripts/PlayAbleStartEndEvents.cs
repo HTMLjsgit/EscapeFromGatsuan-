@@ -29,8 +29,6 @@ public class PlayAbleStartEndEvents : SerializedMonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("playable_directior_time: " + playable_director.time);
-        Debug.Log("playable_directior_duration:" + playable_director.duration);
         if(playable_director.time >= playable_director.duration - 0.03f)
         {
             Debug.Log("TimeèIóπÇµÇΩÇÊÇ®");

@@ -16,14 +16,7 @@ public class BeltoMoveArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ObjectsInArea.Count >= 2)
-        {
-            if (ObjectsInArea.Contains(this.gameObject))
-            {
-                //Areaの中に２つ以上オブジェクト君がいてさらにプレイヤーもいたら
-                belto_area_controller.BeltoAreaError = true;
-            }
-        }
+
     }
     private void OnTriggerStay(Collider other)
     {
