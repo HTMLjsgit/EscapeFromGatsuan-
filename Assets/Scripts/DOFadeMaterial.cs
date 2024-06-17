@@ -4,13 +4,16 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 public class DOFadeMaterial : SerializedMonoBehaviour
 {
-    private MeshRenderer mesh_renderer;
+    public MeshRenderer mesh_renderer;
     private Color default_color;
     public float target_transparent;
     // Start is called before the first frame update
     void Start()
     {
-        mesh_renderer = this.gameObject.GetComponent<MeshRenderer>();
+        if(mesh_renderer == null)
+        {
+            mesh_renderer = this.gameObject.GetComponent<MeshRenderer>();
+        }
         default_color = mesh_renderer.material.color;
     }
 
@@ -24,6 +27,7 @@ public class DOFadeMaterial : SerializedMonoBehaviour
     {
         if(transparent_color == 1)
         {
+            Debug.Log("DoFadeŠÖ”==1‚ª“Ç‚İ‚Ü‚ê‚Ä‚¢‚Ü‚·");
             StandardShaderUtils.ChangeRenderMode(mesh_renderer.material, StandardShaderUtils.BlendMode.Opaque);
         }
         else

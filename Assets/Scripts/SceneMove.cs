@@ -2,15 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class SceneMove : MonoBehaviour
+using Sirenix.OdinInspector;
+public class SceneMove : SerializedMonoBehaviour
 {
     private RelayPointSave relay_point_save;
+    public bool SceneMoveFromStart;
+    [HideIf("SceneMoveFromStart")]
     public bool NextStageByDoor;
+    [ShowIf("SceneMoveFromStart")]
+    public string NextStageNameBySelect = "Scene1";
+
     // Start is called before the first frame update
     void Start()
     {
-        relay_point_save = GameObject.FindWithTag("GameController").GetComponent<RelayPointSave>();
+        if (!SceneMoveFromStart)
+        {
+            relay_point_save = GameObject.FindWithTag("GameController").GetComponent<RelayPointSave>();
+        }
     }
 
     // Update is called once per frame
@@ -20,10 +28,14 @@ public class SceneMove : MonoBehaviour
     }
     public void scene_move(string SceneName)
     {
-        if (NextStageByDoor)
+        if (NextStageByDoor && !SceneMoveFromStart)
         {
             relay_point_save.SavedPlayerPosition = Vector3.zero;
         }
         SceneManager.LoadScene(SceneName);
+    }
+    public void scene_move_from_start()
+    {
+        SceneManager.LoadScene(NextStageNameBySelect);
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6602135495551951522}
   - component: {fileID: 846418252403084298}
   - component: {fileID: 2387336651559533245}
+  - component: {fileID: 749657833346235374}
   m_Layer: 0
   m_Name: Prim.00000000
   m_TagString: Untagged
@@ -190,6 +191,29 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &749657833346235374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706129562807148215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac0ec0c0b52bd044b1c335d6ad6bae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  mesh_renderer: {fileID: 6292432330742135868}
+  target_transparent: 0
 --- !u!1 &8868373734239251137
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,4 +521,10 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  mesh_renderer: {fileID: 0}
   target_transparent: 0
+--- !u!23 &6292432330742135868 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 934f16ea68af0c84e96b5f1682aa68e9, type: 3}
+  m_PrefabInstance: {fileID: 4652957821169819832}
+  m_PrefabAsset: {fileID: 0}

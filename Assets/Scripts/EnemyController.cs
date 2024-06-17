@@ -45,10 +45,7 @@ public class EnemyController : MonoBehaviour
 
         if(Vector3.Angle(direction, MyEyePosition.forward) <= VisionFieldAngle && collidered.Collider)
         {
-            if(this.gameObject.name == "gatsu_unko2" || this.gameObject.name == "gatsu_unko1")
-            {
-                Debug.Log("Angle‚È‚¢‚É‚¢‚é");
-            }
+
             
             //Player‚ª“G‚ÌŽ‹ŠEˆÈ“à‚É‚¢‚é‚©‚ð”»’è‚·‚éB‚Ü‚¸‚Ë
             if(Physics.Raycast(MyEyePosition.transform.position, direction,out hit, 100000000))

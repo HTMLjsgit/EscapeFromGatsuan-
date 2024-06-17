@@ -19,7 +19,7 @@ TagManager:
   - NoJudgedNavmesh
   - Enemy
   - cinemachine_collider
-  - 
+  - Player
   - 
   - 
   - 

@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2503377759364350511}
+  - component: {fileID: 2497707215486612250}
   m_Layer: 0
   m_Name: Position4
   m_TagString: Untagged
@@ -62,6 +63,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6041060278784671634}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2497707215486612250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4221527816923204620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf9569ba9b8e4f46adc027ce0e18e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  OnEditorFixed: 0
 --- !u!1 &4371325594560440799
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,6 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3973492553970829280}
+  - component: {fileID: 654037502174403020}
   m_Layer: 0
   m_Name: Position2
   m_TagString: Untagged
@@ -93,6 +117,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6041060278784671634}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &654037502174403020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371325594560440799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf9569ba9b8e4f46adc027ce0e18e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  OnEditorFixed: 0
 --- !u!1 &5097801465709094543
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1751417895744966643}
+  - component: {fileID: 6109360672614826139}
   m_Layer: 0
   m_Name: Position3
   m_TagString: Untagged
@@ -124,6 +171,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6041060278784671634}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6109360672614826139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5097801465709094543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf9569ba9b8e4f46adc027ce0e18e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  OnEditorFixed: 0
 --- !u!1 &5543739626822632219
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3700919924455350471}
+  - component: {fileID: 4693288033493611623}
   m_Layer: 0
   m_Name: Position1
   m_TagString: Untagged
@@ -289,6 +359,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6041060278784671634}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4693288033493611623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7021454303936074749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf9569ba9b8e4f46adc027ce0e18e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  OnEditorFixed: 0
 --- !u!1 &8625826010475037589
 GameObject:
   m_ObjectHideFlags: 0

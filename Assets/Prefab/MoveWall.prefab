@@ -68,6 +68,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf9569ba9b8e4f46adc027ce0e18e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  OnEditorFixed: 0
 --- !u!54 &8549962554799057084
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -121,6 +131,7 @@ GameObject:
   - component: {fileID: 8386474730627254742}
   - component: {fileID: 7884275314339539053}
   - component: {fileID: 8310202584393817867}
+  - component: {fileID: 3355397960207248445}
   m_Layer: 3
   m_Name: MoveWall
   m_TagString: Untagged
@@ -263,6 +274,28 @@ MonoBehaviour:
   PositionArrivalWaitTime: 3
   Collidered: 0
   collidered_obj: {fileID: 0}
+--- !u!114 &3355397960207248445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101295361244346276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac0ec0c0b52bd044b1c335d6ad6bae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  target_transparent: 0
 --- !u!1 &9160896147192406473
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +364,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf9569ba9b8e4f46adc027ce0e18e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  OnEditorFixed: 0
 --- !u!54 &7278540756458118273
 Rigidbody:
   m_ObjectHideFlags: 0

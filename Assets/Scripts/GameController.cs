@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene("GameOver");
     }
-    private void CursorDOFixed(bool _fix)
+    public void CursorDOFixed(bool _fix)
     {
         if (_fix)
         {
