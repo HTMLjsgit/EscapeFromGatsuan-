@@ -58,7 +58,7 @@ public class WallUpDown : SerializedMonoBehaviour
     {
         ActionEnd = false;
         up_or_down = UpOrDown.Down;
-        this.transform.DOMoveY(DefaultPositionY, Duration).SetEase(Ease.Linear).OnComplete(() => {
+        this.transform.DOMoveY(DefaultPositionY, Duration).SetEase(Ease.Linear).SetLink(this.gameObject).OnComplete(() => {
             
             ActionEnd = true;
         });

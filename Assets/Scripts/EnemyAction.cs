@@ -31,7 +31,7 @@ public class EnemyAction : SerializedMonoBehaviour
     public bool WallBreak;
     [ShowIf("WallBreak")]
     public WallBreakSetting wall_break_setting;
-
+    public bool ChaseToBellIfBellRing;
     private float ChangeWaitTimeNow;
     private EnemyMove enemy_move;
     private AudioSource audio_source;
@@ -56,7 +56,7 @@ public class EnemyAction : SerializedMonoBehaviour
     void Update()
     {
         anim.SetBool("Talk", Talk);
-        if (DirectionChange && !enemy_move.ChaseToPlayer)
+        if (DirectionChange && !enemy_move.ChaseToTargetMode)
         {
             ChangeWaitTimeNow += Time.deltaTime;
             if(ChangeWaitTimeNow > ChangeWaitTime)
@@ -96,11 +96,17 @@ public class EnemyAction : SerializedMonoBehaviour
             }
 
         }
+        if (ChaseToBellIfBellRing)
+        {
 
+        }
         if(PlayAnimMode == true)
         {
             anim.SetBool(PlayAnimName, true);
         }
+
+
+
     }
     public void AttackWallMode(bool mode)
     {
