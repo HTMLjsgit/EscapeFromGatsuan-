@@ -7,6 +7,7 @@ TagManager:
   - MovePosition
   - MainBGM
   - VirtualCamera
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - UI
   - Floor
   - NoJudgedNavmesh
-  - 
-  - 
-  - 
+  - Enemy
+  - cinemachine_collider
+  - Player
   - 
   - 
   - 

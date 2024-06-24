@@ -119,10 +119,8 @@ public class EnemyMove : SerializedMonoBehaviour
         if (enemy_controller.DiscoveryToPlayer)
         {
             ChaseToPlayerStartTimeNow += Time.deltaTime;
-            Debug.Log("EnemyMoveÇ≈DiscoveryToPlayerÅI");
             if (ChaseToPlayerStartTimeNow >= 0.5f)
             {
-                Debug.Log("ChaseToPlayerÇ…Ç∑ÇÈÇÕÇ∏ÅI");
 
                 ChaseToPlayer = true;
             }
@@ -254,7 +252,6 @@ public class EnemyMove : SerializedMonoBehaviour
     }
     public void AttackEndChange(bool ended)
     {
-        Debug.Log("AttackEndChangeeeeee: " + ended);
         this.AttackEnd = ended;
     }
 

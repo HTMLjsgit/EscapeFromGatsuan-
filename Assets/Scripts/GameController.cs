@@ -10,7 +10,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("-----StageNowName: " + SceneManager.GetActiveScene().name);
         audio_source = this.gameObject.GetComponent<AudioSource>();
         SceneManager.sceneLoaded += OnSceneLoaded;
         CursorDOFixed(CursorFixed);
@@ -29,7 +28,7 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene("GameOver");
     }
-    private void CursorDOFixed(bool _fix)
+    public void CursorDOFixed(bool _fix)
     {
         if (_fix)
         {

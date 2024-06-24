@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
 using Sirenix.OdinInspector;
+using DG.Tweening;
 public class PlayAbleStartEndEvents : SerializedMonoBehaviour
 {
     public UnityEvent StartEvent;
@@ -22,16 +23,13 @@ public class PlayAbleStartEndEvents : SerializedMonoBehaviour
         {
             this.Play();
         }
-        //AlreadyEnded();
-        //AlreadyEndedBackend();
+        AlreadyEnded();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("playable_directior_time: " + playable_director.time);
-        Debug.Log("playable_directior_duration:" + playable_director.duration);
-        if(playable_director.time >= playable_director.duration - 0.02f)
+        if(playable_director.time >= playable_director.duration - 0.03f)
         {
             Debug.Log("TimeI—¹‚µ‚½‚æ‚¨");
             //Timeline‚ÌÄ¶‚ªI—¹

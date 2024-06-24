@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     private EnemyAction enemy_action;
     public Collidered collidered;
     public List<string> TargetLayers = new List<string>() { "Object" };
+    public bool PermitDiscoveryToPlayer = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,10 +45,7 @@ public class EnemyController : MonoBehaviour
 
         if(Vector3.Angle(direction, MyEyePosition.forward) <= VisionFieldAngle && collidered.Collider)
         {
-            if(this.gameObject.name == "gatsu_unko2" || this.gameObject.name == "gatsu_unko1")
-            {
-                Debug.Log("Angle‚È‚¢‚É‚¢‚é");
-            }
+
             
             //Player‚ª“G‚ÌŽ‹ŠEˆÈ“à‚É‚¢‚é‚©‚ð”»’è‚·‚éB‚Ü‚¸‚Ë
             if(Physics.Raycast(MyEyePosition.transform.position, direction,out hit, 100000000))
@@ -57,10 +55,11 @@ public class EnemyController : MonoBehaviour
                 {
                     if(hit.collider.gameObject.tag == "Player")
                     {
-                        Debug.Log("Player‚É“–‚½‚è‚Ü‚µ‚½‚ËI");
-                        
-                        DiscoveryToPlayer = true;
-                        MissedPlayer = false;
+                        if (PermitDiscoveryToPlayer)
+                        {
+                            DiscoveryToPlayer = true;
+                            MissedPlayer = false;
+                        }
                     }
                     else
                     {
