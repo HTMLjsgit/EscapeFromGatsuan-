@@ -51,7 +51,13 @@ public class EnemyAction : SerializedMonoBehaviour
             cinemachine_impulse_source = GameObject.FindWithTag("VirtualCamera").GetComponent<CinemachineImpulseSource>();
         }
     }
-
+    private void OnDisable()
+    {
+        if(PlayAnimName != "")
+        {
+            anim.SetBool(PlayAnimName, false);
+        }
+    }
     // Update is called once per frame
     void Update()
     {

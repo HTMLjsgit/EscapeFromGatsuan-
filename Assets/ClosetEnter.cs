@@ -95,7 +95,7 @@ public class ClosetEnter : MonoBehaviour
         Debug.Log("íÜÇ…ì¸ÇËÇ‹ÇµÇΩÅI");
         audio_source.PlayOneShot(door_open_clip);
         inside_or_outside = InsideOrOutSide.Inside;
-        PlayerPosSave = Player.transform.position;
+        PlayerPosSave = this.transform.position + (-this.transform.forward * 2);
         Player.transform.position = TeleportPosition.transform.position;
         player_rigid.isKinematic = true;
         player_move_permit.Stop();

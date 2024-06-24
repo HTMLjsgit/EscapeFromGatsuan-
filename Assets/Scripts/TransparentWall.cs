@@ -63,9 +63,21 @@ public class TransparentWall : SerializedMonoBehaviour
                         do_fade_materials.Add(do_fade_material);
                     }
                 }
-                if(do_fade_material != null) { 
-                    do_fade_material.DOFade(0.3f);
+                if(raycast_hit.collider.gameObject.tag == "ObjectZero")
+                {
+                    if (do_fade_material != null)
+                    {
+                        do_fade_material.DOFade(0f);
+                    }
                 }
+                else
+                {
+                    if (do_fade_material != null)
+                    {
+                        do_fade_material.DOFade(0.2f);
+                    }
+                }
+
 
             }
         }

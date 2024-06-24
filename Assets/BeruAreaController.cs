@@ -14,6 +14,7 @@ public class BeruAreaController : SerializedMonoBehaviour
     public bool BeruRingNow;
     public GameObject BeruAreaPlayer;
     private GameObject Player;
+    private PlayerMovement player_movement;
     public ColMode col_mode;
     private bool beruring_once;
     public float BeruRingWhileTime;
@@ -23,6 +24,7 @@ public class BeruAreaController : SerializedMonoBehaviour
     {
         beruring = this.gameObject.GetComponent<beru_ring>();
         Player = GameObject.FindWithTag("Player");
+        player_movement = Player.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class BeruAreaController : SerializedMonoBehaviour
         {
             if (!beruring_once && !BeruRingNow)
             {
+                if (player_movement.Crouch) return;
                 BeruRing();
                 beruring_once = true;
             }

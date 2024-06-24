@@ -39,19 +39,30 @@ public class FadeController : SerializedMonoBehaviour
     {
         if (CanvasGroup && !AlreadyEnded)
         {
-            tween = canvas_group.DOFade(1,duration).SetLink(this.gameObject).SetEase(Ease.Linear).OnComplete(() => {
-                StartCoroutine(WaitInvoke(FadeInCompleteEvent));
-            });
+            this.gameObject.SetActive(true);
+            StartCoroutine(FadeInCoroutine());
         }
     }
     public void FadeOut()
     {
         if (CanvasGroup && !AlreadyEnded)
         {
-            tween = canvas_group.DOFade(0, duration).SetLink(this.gameObject).SetEase(Ease.Linear).OnComplete(() => {
-                StartCoroutine(WaitInvoke(FadeOutCompleteEvent));
-            });
+            StartCoroutine(FadeOutCoroutine());
         }
+    }
+    private IEnumerator FadeInCoroutine()
+    {
+        yield return null;
+        tween = canvas_group.DOFade(1, duration).SetLink(this.gameObject).SetEase(Ease.Linear).OnComplete(() => {
+            StartCoroutine(WaitInvoke(FadeInCompleteEvent));
+        });
+    }
+    private IEnumerator FadeOutCoroutine()
+    {
+        tween = canvas_group.DOFade(0, duration).SetLink(this.gameObject).SetEase(Ease.Linear).OnComplete(() => {
+            StartCoroutine(WaitInvoke(FadeOutCompleteEvent));
+        });
+        yield return null;
     }
     public void Kill()
     {

@@ -83,7 +83,7 @@ public class SettingController : MonoBehaviour
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.name == "GameOver")
+        if(scene.name == "GameOver" || scene.name == "GameClear")
         {
             MenuPermitOpen = false;
         }

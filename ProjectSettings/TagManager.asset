@@ -8,6 +8,7 @@ TagManager:
   - MainBGM
   - VirtualCamera
   - Enemy
+  - ObjectZero
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Enemy
   - cinemachine_collider
   - Player
-  - 
+  - ObjectZero
   - 
   - 
   - 
