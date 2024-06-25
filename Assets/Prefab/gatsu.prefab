@@ -327,6 +327,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.2418556, y: 0.11271419, z: 6.066446}
   m_Center: {x: 2.1209276, y: -0.5417943, z: 2.5332198}
+--- !u!1 &6834613606044247464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3645031234939777198}
+  m_Layer: 0
+  m_Name: RayPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3645031234939777198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6834613606044247464}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.73, z: 0}
+  m_LocalScale: {x: 0.81300807, y: 0.81300807, z: 0.81300807}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2888903189866656648}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7021454303936074749
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +725,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 611c24a80e3cd2f458e1a3f9b91351b5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6041060278784671634}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 611c24a80e3cd2f458e1a3f9b91351b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3645031234939777198}
     - targetCorrespondingSourceObject: {fileID: 3667946887678727147, guid: 611c24a80e3cd2f458e1a3f9b91351b5, type: 3}
       insertIndex: 0
       addedObject: {fileID: 2573437279637391603}
@@ -819,6 +853,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  ChaseToTarget: {fileID: 0}
   ToMovePlaces:
   - {fileID: 0}
   - {fileID: 0}
@@ -827,12 +862,16 @@ MonoBehaviour:
   AlreadyWalkMoved: 1
   MoveToPlaces: 1
   CountNow: 0
-  ChaseToPlayer: 0
+  ChaseToTargetMode: 0
   WalkToNextPositionWaitTime: 1
   VectorFixedWhenMoveToPlaces: 0
   WalkSpeed: 2
   InsideToPlayerDistance: 0
   AttackEnd: 1
+  ReturnToDefaultPositionMode: 0
+  ReturnSpeed: 6
+  AlreadyReturnedOnce: 0
+  RayPos: {fileID: 3645031234939777198}
 --- !u!195 &1246228939820918363
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1171,6 +1210,7 @@ MonoBehaviour:
   Change: 0
   ChangeWaitTime: 0
   WallBreak: 0
+  ChaseToBellIfBellRing: 0
 --- !u!114 &642339903037207539
 MonoBehaviour:
   m_ObjectHideFlags: 0

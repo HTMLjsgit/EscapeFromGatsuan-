@@ -4,6 +4,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using UnityEngine.AI;
 using DG.Tweening;
+using UnityEngine.Events;
 public class EnemyMove : SerializedMonoBehaviour
 {
     private Animator anim;
@@ -45,6 +46,10 @@ public class EnemyMove : SerializedMonoBehaviour
     public bool AlreadyReturnedOnce = false;
     private EnemyAction enemy_action;
     private bool ReturnOnceEvent;
+    private RaycastHit hitCol;
+    private int layerMask;
+    private float StickWallTimeNow;
+    public Transform RayPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +61,7 @@ public class EnemyMove : SerializedMonoBehaviour
         DefaultPosition = this.transform.position;
         nav_mesh_agent = this.gameObject.GetComponent<NavMeshAgent>();
         ChaseToTarget = Player;
+        layerMask = LayerMask.GetMask(new string[] { "Object" });
         if (nav_mesh_agent.path.corners.Length >= 1)
         {
             NavmeshNextPos = nav_mesh_agent.path.corners[0];
@@ -108,10 +114,29 @@ public class EnemyMove : SerializedMonoBehaviour
             Debug.Log("WalkMode");
             anim.SetBool("Walk", true);
         }
-
+        //ï«Ç…Ç∏Å[Ç∆Ç‘Ç¬Ç©ÇËë±ÇØÇƒÇ¢ÇÈÇ»ÇÁàÍíUdisabledÇ…ÇµÇƒÇ®Ç≠
+        Debug.DrawRay(RayPos.position, this.transform.forward.normalized * 1.5f, Color.magenta);
+        if (Physics.Raycast(RayPos.position,  this.transform.forward, out hitCol, 1.5f, layerMask))
+        {
+            if(MoveToPlaces && !ChaseToTargetMode && !ReturnToDefaultPositionMode)
+            {
+                return;
+            }
+            Debug.Log("ï«Ç…Ç‘Ç¬Ç©ÇËë±ÇØÇƒÇ¢Ç‹Ç∑");
+            if (hitCol.collider.gameObject.layer == LayerMask.NameToLayer("Object"))
+            {
+                StickWallTimeNow += Time.deltaTime;
+                if(StickWallTimeNow > 1)
+                {
+                    nav_mesh_agent.enabled = false;
+                    StickWallTimeNow = 0;
+                }
+            }
+        }
         if (!ChaseToTargetMode && !ReturnToDefaultPositionMode && MoveToPlaces && !enemy_controller.DiscoveryToPlayer)
         {
             //MoveToPlacesÇÃìÆçÏ
+
             nav_mesh_agent.enabled = false;
             if (!AlreadyWalkMoved)
             {
@@ -193,7 +218,7 @@ public class EnemyMove : SerializedMonoBehaviour
         {
             if (!ReturnOnceEvent)
             {
-                nav_mesh_agent.enabled = false;
+
                 Debug.Log("naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                 ReturnOnceEvent = true;
             }
@@ -332,6 +357,10 @@ public class EnemyMove : SerializedMonoBehaviour
     public void ChaseToTargetSet(GameObject Target)
     {
         ChaseToTarget = Target;
+    }
+    private void NavmeshDisabled()
+    {
+        nav_mesh_agent.enabled = false;
     }
     private void MoveByFinder(Vector3 target_pos)
     {
