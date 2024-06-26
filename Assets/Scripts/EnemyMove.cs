@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using UnityEngine.AI;
-
+using DG.Tweening;
+using UnityEngine.Events;
 public class EnemyMove : SerializedMonoBehaviour
 {
     private Animator anim;
@@ -28,34 +29,44 @@ public class EnemyMove : SerializedMonoBehaviour
     [ShowIf("MoveToPlaces")]
     public float WalkToNextPositionWaitTime = 1f;
     [ShowIf("MoveToPlaces")]
-    public bool VectorFixedWhenMoveToPlaces; 
+    public bool VectorFixedWhenMoveToPlaces;
     public float WalkSpeed = 2;
     public bool InsideToPlayerDistance;
     public bool AttackEnd = true;
     public bool ReturnToDefaultPositionMode;
+    public float ReturnSpeed = 6;
     private GameObject GameController;
     private Animator PlayerAnim;
     private EnemyController enemy_controller;
-    private Vector3 SavePosiitonWhenChaseToPlayer;
     private bool SavePositionedOnce = false;
     private float ChaseToPlayerStartTimeNow;
     private AudioSource RunAwayBGM;
     private Vector3 DefaultPosition;
+    private Vector3 DefaultRotation;
     public bool AlreadyReturnedOnce = false;
+    private EnemyAction enemy_action;
+    private bool ReturnOnceEvent;
+    private RaycastHit hitCol;
+    private int layerMask;
+    private float StickWallTimeNow;
+    public Transform RayPos;
     // Start is called before the first frame update
     void Start()
     {
         rigid = this.gameObject.GetComponent<Rigidbody>();
         anim = this.gameObject.GetComponent<Animator>();
+        DefaultRotation = this.transform.rotation.eulerAngles;
         Player = GameObject.FindWithTag("Player");
         PlayerAnim = Player.GetComponent<Animator>();
         DefaultPosition = this.transform.position;
         nav_mesh_agent = this.gameObject.GetComponent<NavMeshAgent>();
         ChaseToTarget = Player;
+        layerMask = LayerMask.GetMask(new string[] { "Object" });
         if (nav_mesh_agent.path.corners.Length >= 1)
         {
             NavmeshNextPos = nav_mesh_agent.path.corners[0];
         }
+        enemy_action = this.gameObject.GetComponent<EnemyAction>();
         nav_mesh_agent.updatePosition = false;
         nav_mesh_agent.updateRotation = false;
         GameController = GameObject.FindWithTag("GameController");
@@ -74,6 +85,8 @@ public class EnemyMove : SerializedMonoBehaviour
         ToPlayerDirection = PlayerToDistance.normalized;
         if (AlreadyReturnedOnce)
         {
+            anim.SetBool("Walk", false);
+            anim.SetBool("Run", false);
             //帰還済みならば
             if (MoveToPlaces)
             {
@@ -83,14 +96,47 @@ public class EnemyMove : SerializedMonoBehaviour
             }
             AlreadyReturnedOnce = false;
         }
+        if (ReturnToDefaultPositionMode || ChaseToTargetMode)
+        {
+            if (AttackEnd)
+            {
+                Vector3 forward = (nav_mesh_agent.steeringTarget - this.transform.position).normalized;
+                this.transform.forward = new Vector3(forward.x, 0, forward.z);
+            }
+            enemy_action.enabled = false;
+        }
+        else
+        {
+            enemy_action.enabled = true;
+        }
         if (ReturnToDefaultPositionMode)
         {
             Debug.Log("WalkMode");
             anim.SetBool("Walk", true);
         }
-
+        //壁にずーとぶつかり続けているなら一旦disabledにしておく
+        Debug.DrawRay(RayPos.position, this.transform.forward.normalized * 1.5f, Color.magenta);
+        if (Physics.Raycast(RayPos.position,  this.transform.forward, out hitCol, 1.5f, layerMask))
+        {
+            if(MoveToPlaces && !ChaseToTargetMode && !ReturnToDefaultPositionMode)
+            {
+                return;
+            }
+            Debug.Log("壁にぶつかり続けています");
+            if (hitCol.collider.gameObject.layer == LayerMask.NameToLayer("Object"))
+            {
+                StickWallTimeNow += Time.deltaTime;
+                if(StickWallTimeNow > 1)
+                {
+                    nav_mesh_agent.enabled = false;
+                    StickWallTimeNow = 0;
+                }
+            }
+        }
         if (!ChaseToTargetMode && !ReturnToDefaultPositionMode && MoveToPlaces && !enemy_controller.DiscoveryToPlayer)
         {
+            //MoveToPlacesの動作
+
             nav_mesh_agent.enabled = false;
             if (!AlreadyWalkMoved)
             {
@@ -99,7 +145,7 @@ public class EnemyMove : SerializedMonoBehaviour
                 }
                 else
                 {
-                    this.transform.forward = new Vector3(TargetDiff.x, 0, TargetDiff.z);
+                    this.transform.forward = new Vector3(direction.x, 0, direction.z);
                 }
                 if (Vector3.Distance(this.transform.position, TargetPosition) < 0.5f)
                 {
@@ -126,13 +172,13 @@ public class EnemyMove : SerializedMonoBehaviour
                 //横に歩くアニメーション
                 anim.SetBool("HorizontalRun", true);
                 float x = 0;
-                if(TargetDiff.x > 0)
+                if (TargetDiff.x > 0)
                 {
-                     x = 1;
+                    x = 1;
                 }
                 else
                 {
-                     x = -1;
+                    x = -1;
                 }
                 anim.SetFloat("DirectionX", x);
             }
@@ -166,24 +212,30 @@ public class EnemyMove : SerializedMonoBehaviour
         {
             SavePositionedOnce = false;
             ChaseToPlayerStartTimeNow = 0;
-            if (enemy_controller.MissedPlayer)
-            {
-                //this.transform.position= this.transform.position - SavePosiitonWhenChaseToPlayer;
-            }
         }
         //探索結果を利用して移動するコード。
         if (ReturnToDefaultPositionMode)
         {
-            MoveByFinder(DefaultPosition);
+            if (!ReturnOnceEvent)
+            {
+
+                Debug.Log("naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                ReturnOnceEvent = true;
+            }
             if (Vector3.Distance(this.transform.position, DefaultPosition) <= 1)
             {
                 AlreadyReturnedOnce = true;
                 ReturnToDefaultPositionMode = false;
+                this.transform.DORotate(DefaultRotation, 0.3f).SetEase(Ease.Linear).SetLink(this.gameObject);
             }
+            MoveByFinder(DefaultPosition);
+        }
+        else
+        {
+            ReturnOnceEvent = false;
         }
         if (ChaseToTargetMode)
         {
-            MoveByFinder(ChaseToTarget.gameObject.transform.position);
             if (ChaseToTarget == Player)
             {
                 InsideToPlayerDistance = Vector3.Distance(this.transform.position, ChaseToTarget.transform.position) <= nav_mesh_agent.stoppingDistance;
@@ -192,7 +244,7 @@ public class EnemyMove : SerializedMonoBehaviour
             {
                 InsideToPlayerDistance = Vector3.Distance(this.transform.position, ChaseToTarget.transform.position) <= 5;
             }
-
+            MoveByFinder(ChaseToTarget.gameObject.transform.position);
             anim.SetBool("Walk", false);
 
             if (InsideToPlayerDistance)
@@ -203,7 +255,7 @@ public class EnemyMove : SerializedMonoBehaviour
                     anim.SetTrigger("Attack");
                 }
             }
-            else if(!InsideToPlayerDistance)
+            else if (!InsideToPlayerDistance)
             {
                 anim.SetBool("Run", true);
             }
@@ -214,6 +266,11 @@ public class EnemyMove : SerializedMonoBehaviour
 
         }
 
+    }
+    private IEnumerator ie()
+    {
+        yield return new WaitForSeconds(1);
+        nav_mesh_agent.enabled = false;
     }
     private void OnDrawGizmos()
     {
@@ -229,7 +286,8 @@ public class EnemyMove : SerializedMonoBehaviour
                     prepos = pos;
                 }
             }
-        }else if (ReturnToDefaultPositionMode)
+        }
+        else if (ReturnToDefaultPositionMode)
         {
             Vector3 prepos = DefaultPosition;
             Gizmos.color = Color.green;
@@ -248,7 +306,7 @@ public class EnemyMove : SerializedMonoBehaviour
         {
             if (!AlreadyWalkMoved)
             {
-                this.transform.forward = direction;
+                //this.transform.forward = new Vector3();
                 rigid.velocity = (direction * WalkSpeed);
             }
             else
@@ -265,9 +323,11 @@ public class EnemyMove : SerializedMonoBehaviour
                 if (ChaseToTargetMode)
                 {
                     speed = nav_mesh_agent.speed;
-                }else if(!ChaseToTarget && ReturnToDefaultPositionMode)
+
+                }
+                else if (!ChaseToTarget && ReturnToDefaultPositionMode)
                 {
-                    speed = WalkSpeed;
+                    speed = ReturnSpeed;
                 }
                 if (AttackEnd)
                 {
@@ -296,7 +356,11 @@ public class EnemyMove : SerializedMonoBehaviour
     }
     public void ChaseToTargetSet(GameObject Target)
     {
-        ChaseToTarget = Target; 
+        ChaseToTarget = Target;
+    }
+    private void NavmeshDisabled()
+    {
+        nav_mesh_agent.enabled = false;
     }
     private void MoveByFinder(Vector3 target_pos)
     {
@@ -311,13 +375,10 @@ public class EnemyMove : SerializedMonoBehaviour
         {
             NavmeshNextPos = target_pos;
         }
-        if (Vector3.Distance(NavmeshNextPos, this.transform.position) <= 1)
+        if (Vector3.Distance(NavmeshNextPos, this.transform.position) <= 0.5f)
         {
             nav_mesh_agent.nextPosition = NavmeshNextPos;
         }
-        if (AttackEnd)
-        {
-            this.transform.forward = nav_mesh_agent.steeringTarget - this.transform.position;
-        }
+
     }
 }

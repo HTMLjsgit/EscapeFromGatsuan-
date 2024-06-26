@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 {
     public bool CursorFixed = true;
     private AudioSource audio_source;
+    public List<string> KeysWithPlaceName;
     // Start is called before the first frame update
     void Start()
     {

@@ -14,15 +14,20 @@ public class BeruAreaController : SerializedMonoBehaviour
     public bool BeruRingNow;
     public GameObject BeruAreaPlayer;
     private GameObject Player;
+    private PlayerMovement player_movement;
     public ColMode col_mode;
     private bool beruring_once;
     public float BeruRingWhileTime;
+    public List<GameObject> ChaseEnemys;
     private float BeruRingWhileTimeNow;
+    private Rigidbody player_rigid;
     // Start is called before the first frame update
     void Start()
     {
         beruring = this.gameObject.GetComponent<beru_ring>();
         Player = GameObject.FindWithTag("Player");
+        player_movement = Player.GetComponent<PlayerMovement>();
+        player_rigid = Player.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -32,6 +37,7 @@ public class BeruAreaController : SerializedMonoBehaviour
         {
             if (!beruring_once && !BeruRingNow)
             {
+                if (player_movement.Crouch || Mathf.Round(player_rigid.velocity.magnitude) == 0) return;
                 BeruRing();
                 beruring_once = true;
             }
@@ -59,7 +65,7 @@ public class BeruAreaController : SerializedMonoBehaviour
     {
         BeruRingNow = true;
         //ÉxÉãÇ™ñ¬Ç¡ÇΩÇÁÅB
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        foreach (GameObject enemy in ChaseEnemys)
         {
             EnemyMove enemy_move = enemy.GetComponent<EnemyMove>();
             enemy_move.ChaseToTargetSet(BeruAreaPlayer);
@@ -72,7 +78,7 @@ public class BeruAreaController : SerializedMonoBehaviour
     {
         BeruRingNow = false;
         beruring.StopRing();
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        foreach (GameObject enemy in ChaseEnemys)
         {
             EnemyMove enemy_move = enemy.GetComponent<EnemyMove>();
             enemy_move.ChaseToTargetSet(null);
