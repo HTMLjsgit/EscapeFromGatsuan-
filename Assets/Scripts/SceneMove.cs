@@ -30,7 +30,7 @@ public class SceneMove : SerializedMonoBehaviour
     {
         if (NextStageByDoor && !SceneMoveFromStart)
         {
-            relay_point_save.SavedPlayerPosition = Vector3.zero;
+            relay_point_save.SaveDataRemove();
         }
         SceneManager.LoadScene(SceneName);
     }
