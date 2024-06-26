@@ -21,6 +21,8 @@ public class SettingController : MonoBehaviour
     public bool MenuPermitOpen;
     public Text MouseSenseNumberTextUI;
     public GameObject UIs;
+    public float defaultMouseSense = 0.2f;
+    private float MouseSensNow;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,8 @@ public class SettingController : MonoBehaviour
         player_input = GameController.GetComponent<PlayerInput>();
         canvas_group = this.gameObject.GetComponent<CanvasGroup>();
         game_controller_script = GameController.GetComponent<GameController>();
-        MouseSenseNumberTextUI.text = cinemachine_pov.m_HorizontalAxis.m_MaxSpeed.ToString();
+        Debug.Log("MouseSenséwíË: " + defaultMouseSense);
+        MouseSens(defaultMouseSense);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -76,6 +79,7 @@ public class SettingController : MonoBehaviour
         cinemachine_pov.m_HorizontalAxis.m_MaxSpeed = value;
         cinemachine_pov.m_VerticalAxis.m_MaxSpeed = value;
         MouseSenseNumberTextUI.text = value.ToString();
+        MouseSensNow = value;
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -92,6 +96,15 @@ public class SettingController : MonoBehaviour
             if (cinemachine_pov == null)
             {
                 cinemachine_pov = cinemachine_virtualcamera.GetCinemachineComponent<CinemachinePOV>();
+            }
+            Debug.Log("StartÇÃÇÕÇ∏Ç»ÇÃÇ…åƒÇŒÇÍÇÈÅH");
+            if(MouseSensNow != 0)
+            {
+                this.MouseSens(MouseSensNow);
+            }
+            else
+            {
+                this.MouseSens(defaultMouseSense);
             }
             MenuPermitOpen = true;
         }

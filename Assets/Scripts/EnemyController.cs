@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
     {
         Vector3 direction = PlayersEyePosition.transform.position - MyEyePosition.transform.position;
 
-        if (enemy_move.InsideToPlayerDistance)
+        if (enemy_move.InsideToPlayerDistance && enemy_move.ChaseToTarget == Player)
         {
             player_move_permit.Stop();
         }
@@ -58,6 +58,8 @@ public class EnemyController : MonoBehaviour
                         if (PermitDiscoveryToPlayer)
                         {
                             DiscoveryToPlayer = true;
+                            enemy_move.ChaseToTargetSet(Player);
+                            player_controller.chased_by_enemies = true;
                             MissedPlayer = false;
                         }
                     }
@@ -78,6 +80,10 @@ public class EnemyController : MonoBehaviour
             else
             {
                 //DiscoveryToPlayer = false;
+            }
+            if (!PermitDiscoveryToPlayer)
+            {
+                player_controller.chased_by_enemies = false;
             }
             Debug.DrawLine(MyEyePosition.transform.position, direction, Color.red);
         }

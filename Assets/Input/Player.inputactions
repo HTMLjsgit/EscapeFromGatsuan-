@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ClosetAction",
+                    "type": "Button",
+                    "id": "480fceed-4bcc-4a7a-b745-6f8518da967a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -364,6 +373,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "menu_open",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1f1bc1d-7a8d-4cfe-904e-f4442d0ab301",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ClosetAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

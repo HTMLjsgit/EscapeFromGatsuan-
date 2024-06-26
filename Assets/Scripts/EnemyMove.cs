@@ -9,6 +9,7 @@ public class EnemyMove : SerializedMonoBehaviour
     private Animator anim;
     private Rigidbody rigid;
     private GameObject Player;
+    public GameObject ChaseToTarget;
     public GameObject[] ToMovePlaces;
     public bool AlreadyWalkMoved = true;
     public bool MoveToPlaces = true;
@@ -20,7 +21,7 @@ public class EnemyMove : SerializedMonoBehaviour
     private Vector3 NavmeshNextPos;
     private bool MoveMode = true;
     public int CountNow = 0;
-    public bool ChaseToPlayer;
+    public bool ChaseToTargetMode;
     private NavMeshAgent nav_mesh_agent;
     private bool AttackStoppedOnce;
     private bool StoppedOnce;
@@ -31,6 +32,7 @@ public class EnemyMove : SerializedMonoBehaviour
     public float WalkSpeed = 2;
     public bool InsideToPlayerDistance;
     public bool AttackEnd = true;
+    public bool ReturnToDefaultPositionMode;
     private GameObject GameController;
     private Animator PlayerAnim;
     private EnemyController enemy_controller;
@@ -38,6 +40,8 @@ public class EnemyMove : SerializedMonoBehaviour
     private bool SavePositionedOnce = false;
     private float ChaseToPlayerStartTimeNow;
     private AudioSource RunAwayBGM;
+    private Vector3 DefaultPosition;
+    public bool AlreadyReturnedOnce = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,9 +49,10 @@ public class EnemyMove : SerializedMonoBehaviour
         anim = this.gameObject.GetComponent<Animator>();
         Player = GameObject.FindWithTag("Player");
         PlayerAnim = Player.GetComponent<Animator>();
+        DefaultPosition = this.transform.position;
         nav_mesh_agent = this.gameObject.GetComponent<NavMeshAgent>();
-
-        if(nav_mesh_agent.path.corners.Length >= 1)
+        ChaseToTarget = Player;
+        if (nav_mesh_agent.path.corners.Length >= 1)
         {
             NavmeshNextPos = nav_mesh_agent.path.corners[0];
         }
@@ -67,7 +72,24 @@ public class EnemyMove : SerializedMonoBehaviour
     {
         PlayerToDistance = Player.transform.position - this.transform.position;
         ToPlayerDirection = PlayerToDistance.normalized;
-        if (!ChaseToPlayer && MoveToPlaces && !enemy_controller.DiscoveryToPlayer)
+        if (AlreadyReturnedOnce)
+        {
+            //帰還済みならば
+            if (MoveToPlaces)
+            {
+                Debug.Log("きかんずみ");
+                CountNow = 0;
+                MovePosition();
+            }
+            AlreadyReturnedOnce = false;
+        }
+        if (ReturnToDefaultPositionMode)
+        {
+            Debug.Log("WalkMode");
+            anim.SetBool("Walk", true);
+        }
+
+        if (!ChaseToTargetMode && !ReturnToDefaultPositionMode && MoveToPlaces && !enemy_controller.DiscoveryToPlayer)
         {
             nav_mesh_agent.enabled = false;
             if (!AlreadyWalkMoved)
@@ -81,6 +103,7 @@ public class EnemyMove : SerializedMonoBehaviour
                 }
                 if (Vector3.Distance(this.transform.position, TargetPosition) < 0.5f)
                 {
+                    Debug.Log("");
                     if (CountNow + 1 >= ToMovePlaces.Length)
                     {
                         CountNow = 0;
@@ -93,7 +116,7 @@ public class EnemyMove : SerializedMonoBehaviour
                     AlreadyWalkMoved = true;
                 }
             }
-            if (!VectorFixedWhenMoveToPlaces)
+            if (!VectorFixedWhenMoveToPlaces && !ReturnToDefaultPositionMode)
             {
                 anim.SetBool("Walk", !AlreadyWalkMoved);
                 anim.SetBool("HorizontalRun", false);
@@ -122,7 +145,7 @@ public class EnemyMove : SerializedMonoBehaviour
             if (ChaseToPlayerStartTimeNow >= 0.5f)
             {
 
-                ChaseToPlayer = true;
+                ChaseToTargetMode = true;
             }
             else
             {
@@ -141,7 +164,6 @@ public class EnemyMove : SerializedMonoBehaviour
         }
         else
         {
-            ChaseToPlayer = false;
             SavePositionedOnce = false;
             ChaseToPlayerStartTimeNow = 0;
             if (enemy_controller.MissedPlayer)
@@ -149,37 +171,26 @@ public class EnemyMove : SerializedMonoBehaviour
                 //this.transform.position= this.transform.position - SavePosiitonWhenChaseToPlayer;
             }
         }
-
-        if (ChaseToPlayer)
+        //探索結果を利用して移動するコード。
+        if (ReturnToDefaultPositionMode)
         {
-            nav_mesh_agent.enabled = true;
-            if(Player != null)
+            MoveByFinder(DefaultPosition);
+            if (Vector3.Distance(this.transform.position, DefaultPosition) <= 1)
             {
-                nav_mesh_agent.destination = Player.transform.position;
+                AlreadyReturnedOnce = true;
+                ReturnToDefaultPositionMode = false;
             }
-            if (nav_mesh_agent.path.corners.Length > 2)
+        }
+        if (ChaseToTargetMode)
+        {
+            MoveByFinder(ChaseToTarget.gameObject.transform.position);
+            if (ChaseToTarget == Player)
             {
-                NavmeshNextPos = nav_mesh_agent.path.corners[1];
-            }
-            else
-            {
-                NavmeshNextPos = Player.transform.position;
-            }
-            InsideToPlayerDistance = Vector3.Distance(this.transform.position, Player.transform.position) <= nav_mesh_agent.stoppingDistance;
-
-            if (Vector3.Distance(NavmeshNextPos, this.transform.position) <= 1)
-            {
-                nav_mesh_agent.nextPosition = NavmeshNextPos;
-            }
-
-
-
-            if (AttackEnd)
-            {
-                this.transform.forward = nav_mesh_agent.steeringTarget - this.transform.position;
+                InsideToPlayerDistance = Vector3.Distance(this.transform.position, ChaseToTarget.transform.position) <= nav_mesh_agent.stoppingDistance;
             }
             else
             {
+                InsideToPlayerDistance = Vector3.Distance(this.transform.position, ChaseToTarget.transform.position) <= 5;
             }
 
             anim.SetBool("Walk", false);
@@ -187,23 +198,40 @@ public class EnemyMove : SerializedMonoBehaviour
             if (InsideToPlayerDistance)
             {
                 anim.SetBool("Run", false);
-                if (AttackEnd)
+                if (AttackEnd && ChaseToTarget == Player)
                 {
                     anim.SetTrigger("Attack");
                 }
             }
-            else
+            else if(!InsideToPlayerDistance)
             {
                 anim.SetBool("Run", true);
             }
+
+        }
+        else
+        {
+
         }
 
     }
     private void OnDrawGizmos()
     {
-        if(Player != null)
+        if (ChaseToTargetMode)
         {
-            Vector3 prepos = Player.transform.position;
+            if (ChaseToTarget != null)
+            {
+                Vector3 prepos = ChaseToTarget.transform.position;
+                Gizmos.color = Color.green;
+                foreach (Vector3 pos in nav_mesh_agent.path.corners)
+                {
+                    Gizmos.DrawLine(prepos, pos);
+                    prepos = pos;
+                }
+            }
+        }else if (ReturnToDefaultPositionMode)
+        {
+            Vector3 prepos = DefaultPosition;
             Gizmos.color = Color.green;
             foreach (Vector3 pos in nav_mesh_agent.path.corners)
             {
@@ -212,13 +240,15 @@ public class EnemyMove : SerializedMonoBehaviour
             }
         }
 
+
     }
     private void FixedUpdate()
     {
-        if (!ChaseToPlayer)
+        if (!ChaseToTargetMode && !ReturnToDefaultPositionMode)
         {
             if (!AlreadyWalkMoved)
             {
+                this.transform.forward = direction;
                 rigid.velocity = (direction * WalkSpeed);
             }
             else
@@ -230,9 +260,18 @@ public class EnemyMove : SerializedMonoBehaviour
         {
             if (!InsideToPlayerDistance)
             {
+                Debug.Log("いまきかんちゅうになるはずですが");
+                float speed = 0;
+                if (ChaseToTargetMode)
+                {
+                    speed = nav_mesh_agent.speed;
+                }else if(!ChaseToTarget && ReturnToDefaultPositionMode)
+                {
+                    speed = WalkSpeed;
+                }
                 if (AttackEnd)
                 {
-                    rigid.velocity = ((NavmeshNextPos - this.transform.position).normalized * nav_mesh_agent.speed);
+                    rigid.velocity = ((NavmeshNextPos - this.transform.position).normalized * speed);
                 }
             }
             else
@@ -245,6 +284,7 @@ public class EnemyMove : SerializedMonoBehaviour
     [Button]
     public void MovePosition()
     {
+        Debug.Log("MovePositionAction!!");
         TargetPosition = ToMovePlaces[CountNow].transform.position;
         TargetDiff = TargetPosition - this.gameObject.transform.position;
         direction = TargetDiff.normalized;
@@ -254,5 +294,30 @@ public class EnemyMove : SerializedMonoBehaviour
     {
         this.AttackEnd = ended;
     }
-
+    public void ChaseToTargetSet(GameObject Target)
+    {
+        ChaseToTarget = Target; 
+    }
+    private void MoveByFinder(Vector3 target_pos)
+    {
+        nav_mesh_agent.enabled = true;
+        //探索結果を利用して目的地に移動するコード
+        nav_mesh_agent.destination = target_pos;
+        if (nav_mesh_agent.path.corners.Length > 2)
+        {
+            NavmeshNextPos = nav_mesh_agent.path.corners[1];
+        }
+        else
+        {
+            NavmeshNextPos = target_pos;
+        }
+        if (Vector3.Distance(NavmeshNextPos, this.transform.position) <= 1)
+        {
+            nav_mesh_agent.nextPosition = NavmeshNextPos;
+        }
+        if (AttackEnd)
+        {
+            this.transform.forward = nav_mesh_agent.steeringTarget - this.transform.position;
+        }
+    }
 }

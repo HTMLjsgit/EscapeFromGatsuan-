@@ -17,6 +17,6 @@ public class PositionMove : MonoBehaviour
     }
     public void MoveY(float target_position)
     {
-        this.transform.DOMoveY(target_position, 0);
+        this.transform.DOMoveY(target_position, 0).SetEase(Ease.Linear).SetLink(this.gameObject);
     }
 }

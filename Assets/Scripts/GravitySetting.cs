@@ -18,4 +18,8 @@ public class GravitySetting : MonoBehaviour
     {
         rigid.AddForce(Gravity, ForceMode.Acceleration);
     }
+    public void GravitySet(float _gravity)
+    {
+        Gravity = new Vector3(Gravity.x, _gravity, Gravity.z);
+    }
 }
