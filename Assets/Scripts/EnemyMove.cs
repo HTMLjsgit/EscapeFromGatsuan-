@@ -234,7 +234,7 @@ public class EnemyMove : SerializedMonoBehaviour
         {
             ReturnOnceEvent = false;
         }
-        if (ChaseToTargetMode)
+        if (ChaseToTargetMode && ChaseToTarget != null)
         {
             if (ChaseToTarget == Player)
             {
@@ -344,7 +344,6 @@ public class EnemyMove : SerializedMonoBehaviour
     [Button]
     public void MovePosition()
     {
-        Debug.Log("MovePositionAction!!");
         TargetPosition = ToMovePlaces[CountNow].transform.position;
         TargetDiff = TargetPosition - this.gameObject.transform.position;
         direction = TargetDiff.normalized;

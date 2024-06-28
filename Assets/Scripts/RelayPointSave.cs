@@ -7,7 +7,7 @@ public class RelayPointSave : MonoBehaviour
     public Vector3 SavedPlayerPosition;
     public string BeforeStageNameForMoment;
     public List<string> VisitStageHistories;
-    public List<string> KeysWithNameSaved;
+    public List<string> KeysWithNameSavedOnSaved;
     public string NowStageName;
     public bool AlreadySaved;
     private string BeforeStageNameSave;
@@ -29,16 +29,19 @@ public class RelayPointSave : MonoBehaviour
     }
     public void Save(Vector3 PlayerPos)
     {
+
         AlreadySaved = true;
         this.SavedPlayerPosition = PlayerPos;
-        KeysWithNameSaved = game_controller.KeysWithPlaceName;
-        
 
+        this.KeysWithNameSavedOnSaved = new List<string>(game_controller.KeysWithPlaceName);
+
+        Debug.Log("RelayPointSave:Save()");
     }
     public void SaveDataRemove()
     {
+        Debug.Log("SaveDataRemove!?!??");
         this.SavedPlayerPosition = Vector3.zero;
-        KeysWithNameSaved.Clear();
+        KeysWithNameSavedOnSaved.Clear();
     }
     private void UnLoaded(Scene scene)
     {

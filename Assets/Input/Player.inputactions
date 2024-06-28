@@ -346,7 +346,7 @@
                 {
                     "name": "",
                     "id": "1d463549-97c0-48cf-b0ac-00e25b4be687",
-                    "path": "<HID::ZhiXu GameSir T4 pro 3.00>/trigger",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -367,6 +367,17 @@
                 },
                 {
                     "name": "",
+                    "id": "cfeb18f1-ce34-4b93-bc56-3c2dbbe9fda0",
+                    "path": "<XInputController>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "MoveModeChange",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "94b2ecc2-328d-4b18-9579-c0f9637673c0",
                     "path": "<Keyboard>/tab",
                     "interactions": "",
@@ -378,11 +389,33 @@
                 },
                 {
                     "name": "",
+                    "id": "a008a6ba-1784-41d9-a839-f37f4c6d0e6e",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "menu_open",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a1f1bc1d-7a8d-4cfe-904e-f4442d0ab301",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "ClosetAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9464576-1470-49ee-8c45-7c63b273e113",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "ClosetAction",
                     "isComposite": false,
                     "isPartOfComposite": false

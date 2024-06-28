@@ -9,6 +9,7 @@ TagManager:
   - VirtualCamera
   - Enemy
   - ObjectZero
+  - RestPoint
   layers:
   - Default
   - TransparentFX

@@ -72,7 +72,16 @@ public class SettingController : MonoBehaviour
                 Opened = true;
             }
         }
-
+        if (Opened)
+        {
+            //開いていてかつ開く許可がなかったら消します。メニューを
+            if (!MenuPermitOpen)
+            {
+                UIs.SetActive(false);
+                menu_close_once = false;
+                Opened = false;
+            }
+        }
     }
     public void MouseSens(float value)
     {

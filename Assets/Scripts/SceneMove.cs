@@ -30,6 +30,7 @@ public class SceneMove : SerializedMonoBehaviour
     {
         if (NextStageByDoor && !SceneMoveFromStart)
         {
+            Debug.Log("Why,,,,,,,SaveDataRemove");
             relay_point_save.SaveDataRemove();
         }
         SceneManager.LoadScene(SceneName);

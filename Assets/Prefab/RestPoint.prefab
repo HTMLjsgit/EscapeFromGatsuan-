@@ -14532,7 +14532,7 @@ GameObject:
   - component: {fileID: 6904046267328188338}
   m_Layer: 0
   m_Name: RestPoint
-  m_TagString: Untagged
+  m_TagString: RestPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19385,3 +19385,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dba08c61040b0047ae52080fdab92d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui_position_move: {fileID: 0}
+  start_in_player: 0
