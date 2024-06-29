@@ -266,6 +266,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6267680371228087669, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 61cf00153afc2234383d06a7422cf969, type: 3}
     - target: {fileID: 6505061987165478032, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -427,7 +431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1518414642290664992, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 308.6
+      value: 309.34332
       objectReference: {fileID: 0}
     - target: {fileID: 1518414642290664992, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -627,6 +631,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6267680371228087669, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 61cf00153afc2234383d06a7422cf969, type: 3}
     - target: {fileID: 6505061987165478032, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -2027,6 +2035,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6267680371228087669, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 61cf00153afc2234383d06a7422cf969, type: 3}
     - target: {fileID: 6505061987165478032, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -2776,7 +2788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1518414642290664992, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 120.19287
+      value: 120.192726
       objectReference: {fileID: 0}
     - target: {fileID: 1518414642290664992, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3226,6 +3238,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6267680371228087669, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 61cf00153afc2234383d06a7422cf969, type: 3}
     - target: {fileID: 6704616523449373605, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_Name
       value: closet
@@ -6354,6 +6370,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6267680371228087669, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 61cf00153afc2234383d06a7422cf969, type: 3}
     - target: {fileID: 6505061987165478032, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -7095,6 +7115,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6267680371228087669, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 61cf00153afc2234383d06a7422cf969, type: 3}
     - target: {fileID: 6704616523449373605, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_Name
       value: closet (6)
@@ -8390,7 +8414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1518414642290664992, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 377.6455
+      value: 370.7217
       objectReference: {fileID: 0}
     - target: {fileID: 1518414642290664992, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8908,7 +8932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1518414642290664992, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 237.0526
+      value: 237.08214
       objectReference: {fileID: 0}
     - target: {fileID: 1518414642290664992, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9772,6 +9796,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6267680371228087669, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 61cf00153afc2234383d06a7422cf969, type: 3}
     - target: {fileID: 6505061987165478032, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -10627,6 +10655,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6267680371228087669, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 61cf00153afc2234383d06a7422cf969, type: 3}
     - target: {fileID: 6505061987165478032, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_Layer
       value: 0
