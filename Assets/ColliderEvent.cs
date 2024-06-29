@@ -17,7 +17,7 @@ public class ColliderEvent : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
@@ -31,7 +31,7 @@ public class ColliderEvent : MonoBehaviour
             collidered_exit_event.Invoke();
         }
     }
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {

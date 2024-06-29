@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class RealyPoint : MonoBehaviour
 {
     private RelayPointSave relay_point_save;
-    public UIPositionMove ui_position_move;
+    public FadeController rest_ui_fade_controller;
     private UnityEvent un_ac = new UnityEvent();
     public bool start_in_player;
     // Start is called before the first frame update
@@ -25,19 +25,22 @@ public class RealyPoint : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" && !start_in_player)
         {
-            if (!relay_point_save.AlreadySaved)
+            if (!relay_point_save.already_saved_with_places[this.gameObject])
             {
-                ui_position_move.Move(true, un_ac, 1);
+                rest_ui_fade_controller.FadeIn();
+            }
+            else
+            {
             }
             Debug.Log("------Saveeeeeeeeee--------");
-            relay_point_save.Save(this.transform.position);
+            relay_point_save.Save(this.transform.position, this.gameObject);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            ui_position_move.Move(false, un_ac,1);
+            rest_ui_fade_controller.FadeOut();
             start_in_player = false;
         }
     }

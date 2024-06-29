@@ -36,7 +36,8 @@ public class TransparentWall : SerializedMonoBehaviour
                     {
                         if(do_fade_animator != null)
                         {
-                            do_fade_animator.SetBool("Transparent", false);
+                            do_fade_animator.SetBool("Transparent_0point3", false);
+                            do_fade_animator.SetBool("Transparent_0", false);
                         }
 
                     }
@@ -71,7 +72,7 @@ public class TransparentWall : SerializedMonoBehaviour
                 {
                     if (do_fade_anim != null)
                     {
-                        do_fade_anim.SetBool("Transparent", true);
+                        do_fade_anim.SetBool("Transparent_0", true);
                     }
                 }
                 else
@@ -79,7 +80,7 @@ public class TransparentWall : SerializedMonoBehaviour
                     if (do_fade_anim != null)
                     {
                         Debug.Log("do_fade_material.DOFade(0.2f)");
-                        do_fade_anim.SetBool("Transparent", true);
+                        do_fade_anim.SetBool("Transparent_0point3", true);
                     }
                     else
                     {

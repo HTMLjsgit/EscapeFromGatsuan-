@@ -17,10 +17,18 @@ public class FadeController : SerializedMonoBehaviour
     public float EventInvokeTimeWait;
     private Tween tween;
     public bool AlreadyEnded;
+    private float WaitEventInvokeTimeNow;
+    private bool Waited;
+    public bool FadeInCompleted;
+    public bool FadeOutCompleted;
+    private bool FadeInStart;
+    private bool FadeOutStart;
+    private bool FadeInStartOnce;
     // Start is called before the first frame update
     void Start()
     {
         canvas_group = this.gameObject.GetComponent<CanvasGroup>();
+        WaitEventInvokeTimeNow = EventInvokeTimeWait;
         if (StartFadeIn)
         {
             FadeIn();
@@ -33,36 +41,78 @@ public class FadeController : SerializedMonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (FadeInStart && !AlreadyEnded)
+        {
+            Debug.Log("FadeinStartttttt");
+            if (FadeInStartOnce)
+            {
+                FadeInAction();
+                FadeInStartOnce = false;
+                FadeInStart = false;
+            }
+            FadeInStartOnce = true;
+        }
+
+        if (FadeInCompleted)
+        {
+            WaitEventInvokeTimeNow -= Time.deltaTime;
+            if(WaitEventInvokeTimeNow <= 0)
+            {
+                FadeInCompleteEvent.Invoke();
+                WaitEventInvokeTimeNow = EventInvokeTimeWait;
+                FadeInCompleted = false;
+            }
+        }
+        if (FadeOutCompleted)
+        {
+            WaitEventInvokeTimeNow -= Time.deltaTime;
+            if(WaitEventInvokeTimeNow <= 0)
+            {
+                WaitEventInvokeTimeNow = EventInvokeTimeWait;
+                FadeOutCompleteEvent.Invoke();
+                FadeOutCompleted = false;
+            }
+        }
+    }
+    private void OnDisable()
+    {
+        tween.Kill();
+        FadeOutCompleted = false;
+        FadeInStart = false;
+        FadeInCompleted = false;
+        FadeInStartOnce = false;
+        StartFadeIn = false;
     }
     public void FadeIn()
     {
-        if (CanvasGroup && !AlreadyEnded)
-        {
-            this.gameObject.SetActive(true);
-            StartCoroutine(FadeInCoroutine());
-        }
+        this.gameObject.SetActive(true);
+        FadeInStartOnce = false;
+        FadeInStart = true;
+        FadeOutStart = false;
+
     }
     public void FadeOut()
     {
+        FadeInStart = false;
+        FadeOutStart = true;
         if (CanvasGroup && !AlreadyEnded)
         {
-            StartCoroutine(FadeOutCoroutine());
+            FadeOutAction();
         }
     }
-    private IEnumerator FadeInCoroutine()
+    private void FadeInAction()
     {
-        yield return null;
+        Debug.Log("FadeInAction");
         tween = canvas_group.DOFade(1, duration).SetLink(this.gameObject).SetEase(Ease.Linear).OnComplete(() => {
-            StartCoroutine(WaitInvoke(FadeInCompleteEvent));
+            //StartCoroutine(WaitInvoke(FadeInCompleteEvent));
+            FadeInCompleted = true;
         });
     }
-    private IEnumerator FadeOutCoroutine()
+    private void FadeOutAction()
     {
         tween = canvas_group.DOFade(0, duration).SetLink(this.gameObject).SetEase(Ease.Linear).OnComplete(() => {
-            StartCoroutine(WaitInvoke(FadeOutCompleteEvent));
+            FadeOutCompleted = true;
         });
-        yield return null;
     }
     public void Kill()
     {

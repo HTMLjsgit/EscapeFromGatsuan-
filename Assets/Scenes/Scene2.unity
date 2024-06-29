@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: dde0fdb9256b18149862a17230ef8a36, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 23aa876c80e93a84590fdd20788624d9, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -28903,6 +28903,10 @@ PrefabInstance:
       propertyPath: ui_position_move
       value: 
       objectReference: {fileID: 544494566}
+    - target: {fileID: 6904046267328188338, guid: 1dd31765a732f30479840fcc74a7ae29, type: 3}
+      propertyPath: rest_ui_fade_controller
+      value: 
+      objectReference: {fileID: 4352335765930576782}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29971,6 +29975,10 @@ PrefabInstance:
     - target: {fileID: 4971705296172392872, guid: 0570dde28d07d8d41bfed7e0bea2d6de, type: 3}
       propertyPath: m_Name
       value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971705296172392872, guid: 0570dde28d07d8d41bfed7e0bea2d6de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6735528332002132197, guid: 0570dde28d07d8d41bfed7e0bea2d6de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34262,6 +34270,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef2910885f7476240aebaf953c8138fd, type: 3}
+--- !u!114 &4352335765930576782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7551011874429371649, guid: ef2910885f7476240aebaf953c8138fd, type: 3}
+  m_PrefabInstance: {fileID: 4352335765930576781}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494fc2271fca40843995a574e26c4670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5427387084043582265
 PrefabInstance:
   m_ObjectHideFlags: 0
