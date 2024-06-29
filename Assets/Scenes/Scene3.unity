@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: d8cd5ba7cea515c4e9bece7bcd2c962f, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 91f10a68fdc293d4f97b4afd5674aa70, type: 2}
+  m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6704616523449373605, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7075686121902396026, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -347,6 +351,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -465,6 +473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5301435220521052470, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -481,6 +493,10 @@ PrefabInstance:
     - target: {fileID: 4132583731249185869, guid: 06faf8e3283473f43babb18b2e3833ed, type: 3}
       propertyPath: m_Name
       value: MainBGM
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132583731249185869, guid: 06faf8e3283473f43babb18b2e3833ed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8721193959144086540, guid: 06faf8e3283473f43babb18b2e3833ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -627,6 +643,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6704616523449373605, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7075686121902396026, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -700,6 +720,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -858,6 +882,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -930,6 +958,10 @@ PrefabInstance:
     - target: {fileID: 4971705296172392872, guid: 0570dde28d07d8d41bfed7e0bea2d6de, type: 3}
       propertyPath: m_Name
       value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971705296172392872, guid: 0570dde28d07d8d41bfed7e0bea2d6de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6735528332002132197, guid: 0570dde28d07d8d41bfed7e0bea2d6de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1052,6 +1084,10 @@ PrefabInstance:
     - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_Name
       value: gatsu (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2888903189866656648, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1381,6 +1417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -1449,6 +1489,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -1596,6 +1640,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
@@ -1886,6 +1934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5301435220521052470, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1991,6 +2043,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6704616523449373605, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7075686121902396026, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2056,6 +2112,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
@@ -2135,6 +2195,10 @@ PrefabInstance:
       value: Wall (8)
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
       value: ObjectZero
       objectReference: {fileID: 0}
@@ -2206,6 +2270,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
@@ -2280,6 +2348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -2348,6 +2420,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
@@ -2506,6 +2582,10 @@ PrefabInstance:
       value: Wall (42)
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
       value: ObjectZero
       objectReference: {fileID: 0}
@@ -2581,6 +2661,10 @@ PrefabInstance:
     - target: {fileID: 434297395468570081, guid: ad41bde82c6a69b45abc2cd1fb9e12f8, type: 3}
       propertyPath: m_Name
       value: beru (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 434297395468570081, guid: ad41bde82c6a69b45abc2cd1fb9e12f8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 958492125517338459, guid: ad41bde82c6a69b45abc2cd1fb9e12f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2729,6 +2813,10 @@ PrefabInstance:
     - target: {fileID: 5301435220521052470, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
       propertyPath: m_Name
       value: Plane (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301435220521052470, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2901,6 +2989,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: isu_and_desk (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c329aa3a5dc907b4fafb5ebc0bc97857, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -3052,6 +3144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: shokki (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 971233c7cd26a914492ba92d67c1bd79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3133,6 +3229,10 @@ PrefabInstance:
     - target: {fileID: 6704616523449373605, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_Name
       value: closet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704616523449373605, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7075686121902396026, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3317,6 +3417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: shokki (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 971233c7cd26a914492ba92d67c1bd79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3333,6 +3437,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -3410,6 +3518,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -3684,6 +3796,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: shokki
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 971233c7cd26a914492ba92d67c1bd79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3700,6 +3816,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
@@ -3956,6 +4076,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: isu_and_desk
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c329aa3a5dc907b4fafb5ebc0bc97857, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4023,6 +4147,10 @@ PrefabInstance:
     - target: {fileID: 6634138780798354746, guid: 1dd31765a732f30479840fcc74a7ae29, type: 3}
       propertyPath: m_Name
       value: RestPoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634138780798354746, guid: 1dd31765a732f30479840fcc74a7ae29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6904046267328188338, guid: 1dd31765a732f30479840fcc74a7ae29, type: 3}
       propertyPath: ui_position_move
@@ -4119,6 +4247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -4191,6 +4323,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -4310,6 +4446,10 @@ PrefabInstance:
     - target: {fileID: 8366723500925143008, guid: ef2910885f7476240aebaf953c8138fd, type: 3}
       propertyPath: m_Name
       value: RestUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8366723500925143008, guid: ef2910885f7476240aebaf953c8138fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8553178410485303882, guid: ef2910885f7476240aebaf953c8138fd, type: 3}
       propertyPath: m_Pivot.x
@@ -4492,6 +4632,10 @@ PrefabInstance:
       value: Wall (39)
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
       value: ObjectZero
       objectReference: {fileID: 0}
@@ -4575,6 +4719,10 @@ PrefabInstance:
     - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_Name
       value: gatsu (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2888903189866656648, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4688,6 +4836,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
@@ -4840,6 +4992,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -5010,6 +5166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: isu_and_desk (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c329aa3a5dc907b4fafb5ebc0bc97857, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5034,6 +5194,10 @@ PrefabInstance:
     - target: {fileID: 429853770203281544, guid: 92973a234414c68498cbef6271112f4a, type: 3}
       propertyPath: m_Name
       value: BeruArea (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 429853770203281544, guid: 92973a234414c68498cbef6271112f4a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 837160919130819936, guid: 92973a234414c68498cbef6271112f4a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5095,6 +5259,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -5190,6 +5358,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -5360,6 +5532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: isu_and_desk (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c329aa3a5dc907b4fafb5ebc0bc97857, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5396,6 +5572,10 @@ PrefabInstance:
     - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_Name
       value: gatsu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2824040112567155770, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: VisionFieldAngle
@@ -5616,6 +5796,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5301435220521052470, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5632,6 +5816,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
@@ -5707,6 +5895,10 @@ PrefabInstance:
       value: Wall (27)
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
       value: ObjectZero
       objectReference: {fileID: 0}
@@ -5778,6 +5970,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
@@ -6155,6 +6351,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6704616523449373605, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7075686121902396026, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6260,6 +6460,10 @@ PrefabInstance:
     - target: {fileID: 6634138780798354746, guid: 1dd31765a732f30479840fcc74a7ae29, type: 3}
       propertyPath: m_Name
       value: RestPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634138780798354746, guid: 1dd31765a732f30479840fcc74a7ae29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6904046267328188338, guid: 1dd31765a732f30479840fcc74a7ae29, type: 3}
       propertyPath: ui_position_move
@@ -6454,6 +6658,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -6563,6 +6771,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virtual Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 7367649525674131328, guid: 1cea7753b930e9842999e1134f4703c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9063650727403959254, guid: 1cea7753b930e9842999e1134f4703c4, type: 3}
       propertyPath: m_Follow
       value: 
@@ -6600,6 +6812,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -6726,6 +6942,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -6856,6 +7076,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: closet (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6704616523449373605, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7075686121902396026, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.32
@@ -6945,6 +7169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5301435220521052470, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6997,6 +7225,10 @@ PrefabInstance:
     - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_Name
       value: gatsu (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2888903189866656648, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7394,6 +7626,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: shokki (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 971233c7cd26a914492ba92d67c1bd79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7419,6 +7655,10 @@ PrefabInstance:
     - target: {fileID: 434297395468570081, guid: ad41bde82c6a69b45abc2cd1fb9e12f8, type: 3}
       propertyPath: m_Name
       value: beru (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 434297395468570081, guid: ad41bde82c6a69b45abc2cd1fb9e12f8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 958492125517338459, guid: ad41bde82c6a69b45abc2cd1fb9e12f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7580,6 +7820,10 @@ PrefabInstance:
       value: Wall (32)
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
       value: ObjectZero
       objectReference: {fileID: 0}
@@ -7737,6 +7981,10 @@ PrefabInstance:
       value: Wall (40)
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
       value: ObjectZero
       objectReference: {fileID: 0}
@@ -7809,6 +8057,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -7877,6 +8129,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -7999,6 +8255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: daishokudou (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 662d83365b616b842a269c9b2491bfa4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8031,6 +8291,10 @@ PrefabInstance:
     - target: {fileID: 4321689964526224561, guid: 92ff5966ff99afe4c9e4915af9b9f161, type: 3}
       propertyPath: m_Name
       value: NextStageDoors
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321689964526224561, guid: 92ff5966ff99afe4c9e4915af9b9f161, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6562185995384539200, guid: 92ff5966ff99afe4c9e4915af9b9f161, type: 3}
       propertyPath: m_Alpha
@@ -8149,6 +8413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5301435220521052470, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8165,6 +8433,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -8235,6 +8507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -8303,6 +8579,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -8384,6 +8664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -8452,6 +8736,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
@@ -8574,6 +8862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane
       objectReference: {fileID: 0}
+    - target: {fileID: 5301435220521052470, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8638,6 +8930,10 @@ PrefabInstance:
     - target: {fileID: 5301435220521052470, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
       propertyPath: m_Name
       value: Plane (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301435220521052470, guid: 74c81fcb9b5048446967dfae6350aef8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8821,6 +9117,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -8901,6 +9201,10 @@ PrefabInstance:
     - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_Name
       value: gatsu (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2888903189866656648, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9083,6 +9387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -9147,6 +9455,10 @@ PrefabInstance:
     - target: {fileID: 2655457863118396106, guid: d132f4a2468ffe343a0af40f9812ec1c, type: 3}
       propertyPath: m_Name
       value: me
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655457863118396106, guid: d132f4a2468ffe343a0af40f9812ec1c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2847984213834731731, guid: d132f4a2468ffe343a0af40f9812ec1c, type: 3}
       propertyPath: serializationData.Prefab
@@ -9453,6 +9765,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6704616523449373605, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7075686121902396026, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9657,6 +9973,10 @@ PrefabInstance:
       value: Wall (5)
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
       value: ObjectZero
       objectReference: {fileID: 0}
@@ -9783,6 +10103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeruArea (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 429853770203281544, guid: 92973a234414c68498cbef6271112f4a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 837160919130819936, guid: 92973a234414c68498cbef6271112f4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 357.76
@@ -9856,6 +10180,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
@@ -9934,6 +10262,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -10015,6 +10347,10 @@ PrefabInstance:
     - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_Name
       value: gatsu (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2888903189866656648, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10284,6 +10620,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6704616523449373605, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7075686121902396026, guid: 94045c628c9677d4fa2d305ebbc7f1b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10350,6 +10690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Navmesh
       objectReference: {fileID: 0}
+    - target: {fileID: 75849666482892709, guid: 162e1437fcf4fed4a90f29bf1fb0ba09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 966281675647405151, guid: 162e1437fcf4fed4a90f29bf1fb0ba09, type: 3}
       propertyPath: m_DefaultArea
       value: 0
@@ -10357,7 +10701,7 @@ PrefabInstance:
     - target: {fileID: 966281675647405151, guid: 162e1437fcf4fed4a90f29bf1fb0ba09, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: e30f4fb0ba9c3fd4c90853f9132c62ca, type: 2}
+      objectReference: {fileID: 23800000, guid: b59485a9466836f4a862dbda76b1528d, type: 2}
     - target: {fileID: 966281675647405151, guid: 162e1437fcf4fed4a90f29bf1fb0ba09, type: 3}
       propertyPath: m_LayerMask.m_Bits
       value: 4294967295
@@ -10418,6 +10762,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -10541,6 +10889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -10615,6 +10967,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CinemachineBrain
       objectReference: {fileID: 0}
+    - target: {fileID: 1069300380691354079, guid: 800c9146e4d583f46959aacb00079cd1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4320142468799200382, guid: 800c9146e4d583f46959aacb00079cd1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 147.16641
@@ -10656,9 +11012,13 @@ PrefabInstance:
       value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 7330149197517016971, guid: 800c9146e4d583f46959aacb00079cd1, type: 3}
+      propertyPath: VirtualCamera
+      value: 
+      objectReference: {fileID: 1240040921}
+    - target: {fileID: 7330149197517016971, guid: 800c9146e4d583f46959aacb00079cd1, type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 7330149197517016971, guid: 800c9146e4d583f46959aacb00079cd1, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10675,6 +11035,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -10752,6 +11116,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -10837,6 +11205,10 @@ PrefabInstance:
     - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_Name
       value: gatsu (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548090201646754098, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2888903189866656648, guid: 06640ca0b1b877345ab5c54e5b81beb0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10936,6 +11308,10 @@ PrefabInstance:
       value: Wall (35)
       objectReference: {fileID: 0}
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_TagString
       value: ObjectZero
       objectReference: {fileID: 0}
@@ -11007,6 +11383,10 @@ PrefabInstance:
     - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: m_Name
       value: Wall (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089531920614935640, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7207405064416478603, guid: 99f77699df15c1243882724cf4c20e2c, type: 3}
       propertyPath: serializationData.Prefab
@@ -11117,6 +11497,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: takarabako
       objectReference: {fileID: 0}
+    - target: {fileID: 746006857464730361, guid: 0e1cf735d26b0724596cd6ed71167b73, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2408528573390608920, guid: 0e1cf735d26b0724596cd6ed71167b73, type: 3}
       propertyPath: KeyName
       value: door
@@ -11145,6 +11529,10 @@ PrefabInstance:
     - target: {fileID: 434297395468570081, guid: ad41bde82c6a69b45abc2cd1fb9e12f8, type: 3}
       propertyPath: m_Name
       value: beru
+      objectReference: {fileID: 0}
+    - target: {fileID: 434297395468570081, guid: ad41bde82c6a69b45abc2cd1fb9e12f8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 958492125517338459, guid: ad41bde82c6a69b45abc2cd1fb9e12f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11312,6 +11700,10 @@ PrefabInstance:
     - target: {fileID: 429853770203281544, guid: 92973a234414c68498cbef6271112f4a, type: 3}
       propertyPath: m_Name
       value: BeruArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 429853770203281544, guid: 92973a234414c68498cbef6271112f4a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 837160919130819936, guid: 92973a234414c68498cbef6271112f4a, type: 3}
       propertyPath: m_LocalPosition.x

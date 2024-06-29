@@ -10,7 +10,7 @@ public class TransparentWall : SerializedMonoBehaviour
     private GameObject Player;
     private PlayerController player_controller;
     private RaycastHit raycast_hit;
-    public List<DOFadeMaterial> do_fade_materials = new List<DOFadeMaterial>();
+    public List<Animator> do_fade_animators = new List<Animator>();
     private int layer_only_mask;
     public string[] target_layers;
     // Start is called before the first frame update
@@ -24,57 +24,66 @@ public class TransparentWall : SerializedMonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Physics.Raycast(this.transform.position, (player_controller.BodyPositionObj.transform.position - this.transform.position), out raycast_hit, 100, layer_only_mask))
+
+        if (Physics.Raycast(this.transform.position, (player_controller.BodyPositionObj.transform.position - this.transform.position), out raycast_hit, 100, layer_only_mask))
         {
             Debug.Log("ÉJÉÅÉâÇ©ÇÁîÚÇŒÇµÇƒìñÇΩÇ¡ÇƒÇ¢ÇÈï®ëÃ: " + raycast_hit.collider.gameObject);
             if(raycast_hit.collider.gameObject.tag == "Player")
             {
-                if(do_fade_materials != null)
+                if(do_fade_animators != null)
                 {
-                    foreach (DOFadeMaterial do_fade_material in do_fade_materials)
+                    foreach (Animator do_fade_animator in do_fade_animators)
                     {
-                        Debug.Log("do_fade_materiallll: " + do_fade_material);
-                        if(do_fade_material != null)
+                        if(do_fade_animator != null)
                         {
-                            do_fade_material.DOFade(1);
+                            do_fade_animator.SetBool("Transparent", false);
                         }
 
                     }
-                    do_fade_materials.Clear();
+                    do_fade_animators.Clear();
+                }
+                else
+                {
+                    Debug.Log("do_fade_materialsÇ™nullÇ≈Ç∑ÅB playerÇÃÇ∆Ç±");
                 }
 
             }
             else if(TargetLayers.Contains(LayerMask.LayerToName(raycast_hit.collider.gameObject.layer)))
             {
 
-                DOFadeMaterial do_fade_material;
-                do_fade_material = raycast_hit.collider.gameObject.GetComponent<DOFadeMaterial>();
-                if(do_fade_materials != null)
+                Animator do_fade_anim;
+                do_fade_anim = raycast_hit.collider.gameObject.GetComponent<Animator>();
+                if(do_fade_animators != null)
                 {
-                    if (!do_fade_materials.Contains(do_fade_material) && do_fade_material != null)
+                    if (!do_fade_animators.Contains(do_fade_anim) && do_fade_anim != null)
                     {
-                        do_fade_materials.Add(do_fade_material);
+                        do_fade_animators.Add(do_fade_anim);
                     }
                 }
                 else
                 {
-                    if(do_fade_material != null)
+                    if(do_fade_anim != null)
                     {
-                        do_fade_materials.Add(do_fade_material);
+                        do_fade_animators.Add(do_fade_anim);
                     }
                 }
                 if(raycast_hit.collider.gameObject.tag == "ObjectZero")
                 {
-                    if (do_fade_material != null)
+                    if (do_fade_anim != null)
                     {
-                        do_fade_material.DOFade(0f);
+                        do_fade_anim.SetBool("Transparent", true);
                     }
                 }
                 else
                 {
-                    if (do_fade_material != null)
+                    if (do_fade_anim != null)
                     {
-                        do_fade_material.DOFade(0.2f);
+                        Debug.Log("do_fade_material.DOFade(0.2f)");
+                        do_fade_anim.SetBool("Transparent", true);
+                    }
+                    else
+                    {
+                        Debug.Log("DofadeeeeeeeeeeeeeeeDOFadematerialNUll");
                     }
                 }
 

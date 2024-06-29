@@ -14,6 +14,7 @@ public static class StandardShaderUtils
 
     public static void ChangeRenderMode(Material standardShaderMaterial, BlendMode blendMode)
     {
+        standardShaderMaterial.SetFloat("_Mode", (float)blendMode);
         switch (blendMode)
         {
             case BlendMode.Opaque:

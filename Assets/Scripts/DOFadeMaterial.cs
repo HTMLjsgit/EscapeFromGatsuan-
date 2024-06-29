@@ -25,15 +25,22 @@ public class DOFadeMaterial : SerializedMonoBehaviour
     [Button]
     public void DOFade(float transparent_color)
     {
-        if(transparent_color == 1)
+        Debug.Log("----------------------------------------------------------------------------1");
+        Debug.Log("DOFade関数ないです。");
+        if (transparent_color == 1)
         {
             Debug.Log("DoFade関数==1が読み込まれています");
             StandardShaderUtils.ChangeRenderMode(mesh_renderer.material, StandardShaderUtils.BlendMode.Opaque);
         }
         else
         {
+            Debug.Log("DoFade関数==1以外が読み込まれていますよおおお Fadeマテリアルに変更するよ。");
             StandardShaderUtils.ChangeRenderMode(mesh_renderer.material, StandardShaderUtils.BlendMode.Fade);
         }
+        Debug.Log("DOFade関数内---transparent_color: " + transparent_color);
+        Debug.Log("DOFade関数内---Fade??: " + mesh_renderer.material.renderQueue);
         mesh_renderer.material.color = new Color(default_color.r,default_color.g,default_color.b, transparent_color);
+        Debug.Log("MeshRenderMode??: " + mesh_renderer.material);
+        Debug.Log("----------------------------------------------------------------------------2");
     }
 }
